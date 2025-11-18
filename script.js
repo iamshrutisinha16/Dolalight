@@ -76,3 +76,37 @@ document.querySelectorAll(".premium-img").forEach(img => {
     }, 500);
   });
 });
+
+const section = document.querySelector(".product-info");
+
+if (section) {
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+                section.querySelector(".product-info-img").classList.add("animate");
+                section.querySelector(".product-info-text").classList.add("animate");
+
+                obs.unobserve(section);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    obs.observe(section);
+}
+
+const faqs = document.querySelectorAll(".faq-item");
+faqs.forEach(faq => {
+        faq.querySelector(".faq-question").addEventListener("click", () => {
+            faq.classList.toggle("active");
+        });
+    });
+
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', () => {
+    window.scrollTo({
+      top: document.querySelector('.shop-section').offsetTop,
+      behavior: 'smooth'
+    });
+  });
+});
