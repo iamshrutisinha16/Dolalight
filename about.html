@@ -6,39 +6,59 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <title>Dolalight.com</title>
 </head>
+
 <body>
-   <header>
-    <div class="logo">
-        <img src="assets/logo.png" />
-    </div>
-    <nav id="navbar">
-       <div class="search-box">
-            <input type="text" placeholder="Search products...">
-            <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" />
         </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li class="dropdown">
-                <a>Product <i class="fa-solid fa-caret-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="shop-by-product.html">Shop by Product</a></li>
-                    <li><a href="shop-by-room.html">Shop by Room</a></li>
-                    <li><a href="shop-by-collection.html">Shop by Collection</a></li>
-                    <li><a href="shop-by-brand.html">Shop by our brand</a></li>
-                      <li><a href="shop-by-style.html">Shop by style</a></li>
-                </ul>
-            </li>
-           <li><a href="index.html#our-projects">Project</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="login.html" class="account-btn"><i class="fa-regular fa-id-badge"></i> Account</a></li>
-        </ul>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    </nav>
-</header>
+
+        <nav id="navbar">
+            <div class="search-box">
+                <input type="text" placeholder="Search products...">
+                <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a>Product <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop-by-product.html">Shop by Product</a></li>
+                        <li><a href="shop-by-room.html">Shop by Room</a></li>
+                        <li><a href="shop-by-collection.html">Shop by Collection</a></li>
+                        <li><a href="shop-by-brand.html">Shop by dola</a></li>
+                        <li><a href="shop-by-style.html">Shop by style</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="index.html#our-projects">Project</a></li>
+
+                <li><a href="download.html">Download</a></li>
+
+                <li><a href="contact.html">Contact Us</a></li>
+               <li>
+                 <a href="cart.html" class="cart-btn">
+                     <i class="fa-solid fa-cart-shopping"></i>
+                 <span>Cart</span> 
+                  </a>
+                 </li>
+
+                <li>
+                    <a href="login.html" class="account-btn">
+                        <i class="fa-regular fa-id-badge"></i> Account
+                    </a>
+                </li>
+            </ul>
+
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        </nav>
+
+    </header>
 
 <section class="about-hero">
   <h1>About Us</h1>
@@ -61,6 +81,78 @@
 
     <a class="cta" href="contact.html">Contact Now</a>
   </div>
+</section>
+<!-- ================== OUR CORE VALUES & COMMITMENT ================== -->
+<section class="core-values">
+    <h2 class="section-title">Our Core Values & Commitment</h2>
+
+    <p class="core-intro">
+        At Dolalight, we don’t just sell lights — we create experiences. 
+        Our values define who we are and how we work every day.
+    </p>
+
+    <div class="values-grid">
+
+        <div class="value-card">
+            <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Innovation First</h3>
+            <p>We constantly reinvent lighting design with creativity, modern aesthetics, and smart technology.</p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon-box"><i class="fa-solid fa-handshake-angle"></i></div>
+            <h3>Customer-Centric</h3>
+            <p>Your satisfaction drives everything we do — from design to delivery and beyond.</p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon-box"><i class="fa-solid fa-leaf"></i></div>
+            <h3>Sustainable Approach</h3>
+            <p>Eco-friendly materials, energy-efficient lighting & long-lasting craftsmanship.</p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon-box"><i class="fa-solid fa-check-double"></i></div>
+            <h3>Quality Assurance</h3>
+            <p>Each product undergoes strict testing to ensure durability, safety and premium finishing.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================== MEET OUR TEAM ================== -->
+<section class="meet-team">
+    <h2 class="section-title">Meet Our Team</h2>
+
+    <div class="team-grid">
+
+        <div class="team-card">
+            <div class="team-img">
+                <img src="assets/team1.jpg" alt="Team Member">
+            </div>
+            <h3>Riya Kapoor</h3>
+            <p class="role">Founder & CEO</p>
+            <p class="desc">Leading the brand with innovation, design excellence and customer-first approach.</p>
+        </div>
+
+        <div class="team-card">
+            <div class="team-img">
+                <img src="assets/team2.jpg" alt="Team Member">
+            </div>
+            <h3>Aryan Mehta</h3>
+            <p class="role">Head of Design</p>
+            <p class="desc">Creates stunning lighting concepts with modern trends and premium aesthetics.</p>
+        </div>
+
+        <div class="team-card">
+            <div class="team-img">
+                <img src="assets/team3.jpg" alt="Team Member">
+            </div>
+            <h3>Neha Sharma</h3>
+            <p class="role">Customer Experience Lead</p>
+            <p class="desc">Ensures every customer receives smooth support and a delightful buying experience.</p>
+        </div>
+    </div>
 </section>
 
 <section class="experience-section">
@@ -105,25 +197,40 @@
  </div>
 </section>
 
- <footer>
-  <div class="footer-container">
 
+     <footer>
+  <div class="footer-container">
+    
     <div class="footer-top">
+      
+      <!-- About Store Section -->
       <div class="footer-about">
         <img src="assets/logo.png" class="footer-logo" alt="Logo">
         <p>
           We offer high-quality, energy-efficient lighting solutions for homes, offices, shops, and industries. 
           Combining style, durability, and modern design, our lights brighten every space beautifully.
         </p>
-
+        
         <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/digitalk.infotech.5?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="https://x.com/DigiTal2018info?s=09" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+
+          <a href="https://www.instagram.com/digitalk_infotech_services?igsh=MXMwNmhhOXBtOW1lYg%3D%3D" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/company/digitalk-infotech/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
         </div>
       </div>
+
+      <!-- Informations -->
       <div class="footer-section">
         <h3>Informations</h3>
         <ul>
@@ -134,18 +241,25 @@
           <li><a href="#">Services</a></li>
         </ul>
       </div>
+
+      <!-- Quick Links -->
       <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop-by-product.html">Product</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
+
+      <!-- Contact -->
       <div class="footer-section contact">
         <h3>Contact Us</h3>
-        <p><i class="fa-solid fa-phone"></i> <a href="tel:+916207785047">+91 620 778 5047</a></p>
+        
+        <p><i class="fa-solid fa-phone"></i> 
+          <a href="tel:+916207785047">+91 620 778 5047</a>
+        </p>
 
         <p><i class="fa-solid fa-location-dot"></i>
           <a href="https://goo.gl/maps/YOURLOCATION" target="_blank">
@@ -155,9 +269,14 @@
           </a>
         </p>
 
-        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@dolalight.com">info@dolalight.com</a></p>
+        <p><i class="fa-solid fa-envelope"></i> 
+          <a href="mailto:info@dolalight.com">info@dolalight.com</a>
+        </p>
+
       </div>
     </div>
+
+    <!-- Newsletter Row -->
     <div class="newsletter-full">
       <h3>Newsletter Sign Up</h3>
       <p>Enter your email to receive daily news and get 20% off coupon for all items.</p>

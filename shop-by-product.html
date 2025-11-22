@@ -5,70 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <title>Dolalight.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
-    <div class="logo">
-        <img src="assets/logo.png" />
-    </div>
-    <nav id="navbar">
-       <div class="search-box">
-            <input type="text" placeholder="Search products...">
-            <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <div class="logo">
+            <img src="assets/logo.png" />
         </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li class="dropdown">
-                <a >Product <i class="fa-solid fa-caret-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="shop-by-product.html">Shop by Product</a></li>
-                    <li><a href="shop-by-room.html">Shop by Room</a></li>
-                    <li><a href="shop-by-collection.html">Shop by Collection</a></li>
-                    <li><a href="shop-by-brand.html">Shop by our brand</a></li>
-                    <li><a href="shop-by-style.html">Shop by style</a></li>
-                </ul>
-            </li>
-            <li><a href="index.html#our-projects">Project</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="login.html" class="account-btn"><i class="fa-regular fa-id-badge"></i> Account</a></li>
-        </ul>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    </nav>
-</header>
+
+        <nav id="navbar">
+            <div class="search-box">
+                <input type="text" placeholder="Search products...">
+                <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a>Product <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop-by-product.html">Shop by Product</a></li>
+                        <li><a href="shop-by-room.html">Shop by Room</a></li>
+                        <li><a href="shop-by-collection.html">Shop by Collection</a></li>
+                        <li><a href="shop-by-brand.html">Shop by dola</a></li>
+                        <li><a href="shop-by-style.html">Shop by style</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="index.html#our-projects">Project</a></li>
+
+                <li><a href="download.html">Download</a></li>
+
+                <li><a href="contact.html">Contact Us</a></li>
+                 <li>
+                 <a href="cart.html" class="cart-btn">
+                     <i class="fa-solid fa-cart-shopping"></i>
+                 <span>Cart</span> 
+                  </a>
+                 </li>
+                <li>
+                    <a href="login.html" class="account-btn">
+                        <i class="fa-regular fa-id-badge"></i> Account
+                    </a>
+                </li>
+            </ul>
+
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+<section class="banner-section">
+    <div class="banner-overlay"></div>
+
+    <div class="banner-content fade-up">
+        <h1 class="banner-title">Shop By Product</h1>
+        <p class="banner-subtitle">Premium Lighting Solutions For Every Space</p>
+        <a href="#products" class="banner-btn">Explore Now</a>
+    </div>
+</section>
+
 <section class="product-info-section fade-up">
     <div class="product-info">
-
-        <!-- LEFT IMAGE -->
         <div class="product-info-img">
             <img src="assets/product.jpg" alt="Product Image">
         </div>
 
-        <!-- RIGHT DETAILS -->
         <div class="product-info-text">
             <h2>Shop By Product</h2>
             <p>
-                Explore our complete lighting collection designed for modern homes and workspaces.  
-                From LED panels to decorative wall lights, we offer a premium selection made with durability,  
-                efficiency and elegant design in mind.  
-                Whether you're upgrading your bedroom, living area or your entire home —  
-                find the perfect lighting that brightens your space beautifully and enhances your interior aesthetics.
+                Explore our complete lighting collection designed for modern homes and workspaces.
+                From LED panels to decorative wall lights, we offer a premium selection made with durability,
+                efficiency and elegant design in mind. Whether you're upgrading your bedroom, living area or your
+                entire home — find the perfect lighting that brightens your space beautifully and enhances your interior aesthetics.
             </p>
-
             <a href="#" class="product-btn">Explore Now</a>
+        </div>
+    </div>
+</section>
+<section class="category-section">
+    <h2 class="section-heading fade-in">Shop Lighting Categories</h2>
+    <p class="section-subtitle fade-in">Choose from our premium range of modern, decorative and functional lighting products.</p>
+
+    <div class="category-grid">
+
+        <div class="cat-card fade-in">
+            <div class="cat-img"><img src="assets/LEDCeilingLight.jpg" alt=""></div>
+            <h3>Ceiling Lights</h3>
+            <p>Brighten your room with modern ceiling solutions.</p>
+        </div>
+
+        <div class="cat-card fade-in">
+            <div class="cat-img"><img src="assets/WallSconce.jpg" alt=""></div>
+            <h3>Wall Lamps</h3>
+            <p>Decorative lights that enhance any interior.</p>
+        </div>
+
+        <div class="cat-card fade-in">
+            <div class="cat-img"><img src="assets/hanginglights.jpg" alt=""></div>
+            <h3>Hanging Chandeliers</h3>
+            <p>Luxury chandeliers for halls & dining rooms.</p>
+        </div>
+
+        <div class="cat-card fade-in">
+            <div class="cat-img"><img src="assets/LEDCeilingLight.jpg" alt=""></div>
+            <h3>LED Panels</h3>
+            <p>Energy-efficient flat LED panel lighting.</p>
+        </div>
+
+        <div class="cat-card fade-in">
+            <div class="cat-img"><img src="assets/spotlights.jpg" alt=""></div>
+            <h3>Spot Lights</h3>
+            <p>Highlight your favorite interior elements.</p>
+        </div>
+
+        <div class="cat-card fade-in">
+            <div class="cat-img"><img src="assets/OutdoorWallLight.jpg" alt=""></div>
+            <h3>Outdoor Lights</h3>
+            <p>Beautiful lighting for outdoor spaces.</p>
+        </div>
+
+        <div class="cat-card fade-in">
+            <div class="cat-img"><img src="assets/decorativelight.jpg" alt=""></div>
+            <h3>Chandeliers</h3>
+            <p>Elegant chandeliers to make any room shine with style.</p>
+        </div>
+
+        <div class="cat-card fade-in">
+            <div class="cat-img"><img src="assets/TableLamp.jpg" alt=""></div>
+            <h3>Table Lamps</h3>
+            <p>Add charm and light to your workspace or bedside table.</p>
         </div>
 
     </div>
 </section>
 
-   <footer>
+<section class="lux-section new-design">
+    <h2 class="lux-title">Premium Lighting</h2>
+
+    <div class="lux-flex">
+
+        <div class="lux-card fade-box">
+            <img src="assets/WallSconce.jpg" alt="Wall Lamps">
+            <div class="lux-overlay">
+                <h3>Wall Lamps</h3>
+                <p>Brighten your walls with style and elegance.</p>
+            </div>
+        </div>
+
+        <div class="lux-card fade-box">
+            <img src="assets/hanginglights.jpg" alt="Hanging Chandeliers">
+            <div class="lux-overlay">
+                <h3>Hanging Chandeliers</h3>
+                <p>Add grandeur and sparkle to any room.</p>
+            </div>
+        </div>
+
+        <div class="lux-card fade-box">
+            <img src="assets/LEDCeilingLight.jpg" alt="LED Panels">
+            <div class="lux-overlay">
+                <h3>LED Panels</h3>
+                <p>Modern panels for ambient and efficient lighting.</p>
+            </div>
+        </div>
+
+        <div class="lux-card fade-box">
+            <img src="assets/spotlights.jpg" alt="Spot Lights">
+            <div class="lux-overlay">
+                <h3>Spot Lights</h3>
+                <p>Highlight your favorite spaces with precision.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+     <footer>
   <div class="footer-container">
-
+    
     <div class="footer-top">
-
+      
       <!-- About Store Section -->
       <div class="footer-about">
         <img src="assets/logo.png" class="footer-logo" alt="Logo">
@@ -78,11 +196,21 @@
         </p>
 
         <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/digitalk.infotech.5?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="https://x.com/DigiTal2018info?s=09" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+
+          <a href="https://www.instagram.com/digitalk_infotech_services?igsh=MXMwNmhhOXBtOW1lYg%3D%3D" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/company/digitalk-infotech/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
         </div>
       </div>
 
@@ -102,17 +230,20 @@
       <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop-by-product.html">Product</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
 
       <!-- Contact -->
       <div class="footer-section contact">
         <h3>Contact Us</h3>
-        <p><i class="fa-solid fa-phone"></i> <a href="tel:+916207785047">+91 620 778 5047</a></p>
+        
+        <p><i class="fa-solid fa-phone"></i> 
+          <a href="tel:+916207785047">+91 620 778 5047</a>
+        </p>
 
         <p><i class="fa-solid fa-location-dot"></i>
           <a href="https://goo.gl/maps/YOURLOCATION" target="_blank">
@@ -122,7 +253,10 @@
           </a>
         </p>
 
-        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@dolalight.com">info@dolalight.com</a></p>
+        <p><i class="fa-solid fa-envelope"></i> 
+          <a href="mailto:info@dolalight.com">info@dolalight.com</a>
+        </p>
+
       </div>
     </div>
 
@@ -143,3 +277,8 @@
     &copy; 2025 Dolalight.com | All Rights Reserved
   </div>
 </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
