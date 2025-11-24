@@ -61,169 +61,89 @@
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
         </nav>
     </header>
-  
-<section class="brand-hero">
-    <div class="overlay"></div>
-    <div class="text-box">
-        <h1>Shop By Brand</h1>
-        <p>Explore premium designer lighting brands for your modern home</p>
-        <a href="#brand-grid" class="btn-primary">Explore Brands</a>
-    </div>
-</section>
-<section class="brand-slider">
-    <h2>Top Lighting Brands</h2>
-
-    <div class="logo-track">
-        <img src="assets/decorativelight.jpg">
-        <img src="assets/GoldPendantLight.jpg">
-        <img src="assets/hanginglights.jpg">
-        <img src="assets/indoorlamps.jpg">
-        <img src="assets/LEDCeilingLight.jpg">
-        <img src="assets/modernlight.jpg">
-        <img src="assets/Wall Lights.jpg">
-    </div>
-</section>
-
-<section class="category-highlights">
-    <h2>Shop by Categories</h2>
-
-    <div class="category-grid">
-        <div class="cat-item">
-            <img src="assets/Chandeliersbrand.jpg">
-            <h3>Chandeliers</h3>
+  </section>
+ 
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="light-beam"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Base Building <br><span>Lighting Solutions</span></h1>
+            <p class="hero-desc">
+                Clean, efficient, and aesthetic lighting for common areas, corridors, and core architectural spaces. 
+                Designed for modern commercial infrastructure.
+            </p>
         </div>
-        <div class="cat-item">
-            <img src="assets/Wall Lights.jpg">
-            <h3>Wall Lights</h3>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <p>The Essentials</p>
+                <h2>Architectural Fixtures</h2>
+            </div>
+
+            <div class="product-grid">
+                <!-- Product 1: Linear -->
+                <div class="product-card">
+                    <div class="fixture-visual">
+                        <div class="shape-linear"></div>
+                    </div>
+                    <h3>Linear Profiles</h3>
+                    <p>Seamless LED lines for long corridors and elevator lobbies. Provides a sleek, continuous flow of light.</p>
+                </div>
+
+                <!-- Product 2: Panels -->
+                <div class="product-card">
+                    <div class="fixture-visual">
+                        <div class="shape-panel"></div>
+                    </div>
+                    <h3>Recessed Panels</h3>
+                    <p>Uniform anti-glare panels for open office shells and meeting rooms. High lumen efficiency.</p>
+                </div>
+
+                <!-- Product 3: Downlights -->
+                <div class="product-card">
+                    <div class="fixture-visual">
+                        <div class="shape-spot"></div>
+                    </div>
+                    <h3>COB Downlights</h3>
+                    <p>Focus lighting for reception areas and artistic highlights in base building structures.</p>
+                </div>
+            </div>
         </div>
-        <div class="cat-item">
-            <img src="assets/Ceiling Lightsbrand.jpg">
-            <h3>Ceiling Lights</h3>
+    </section>
+
+    <!-- SIMULATION SECTION (INTERACTIVE) -->
+    <section class="simulation-section">
+        <div class="container">
+            <div class="section-header">
+                <p>Experience the Ambience</p>
+                <h2>Corridor Simulation</h2>
+                <p style="color: #666; margin-top: 10px; font-size: 0.8rem;">Click button to toggle lights</p>
+            </div>
+
+            <!-- The Visual "Corridor" -->
+            <div class="sim-container" id="corridor">
+                <!-- 3 Lights in the corridor -->
+                <div class="ceiling-light">
+                    <div class="light-glow"></div>
+                </div>
+                <div class="ceiling-light">
+                    <div class="light-glow"></div>
+                </div>
+                <div class="ceiling-light">
+                    <div class="light-glow"></div>
+                </div>
+                <div class="ceiling-light">
+                    <div class="light-glow"></div>
+                </div>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleLights()">Turn Lights On</button>
         </div>
-        <div class="cat-item">
-            <img src="assets/LEDPanelsbrand.jpg">
-            <h3>LED Panels</h3>
-        </div>
-    </div>
-</section>
-
-<section class="brand-spotlight">
-    <img src="assets/brandimage.jpg" class="spot-img">
-    <div class="spot-content">
-        <h2>Featured Brand – DOLA Premium Lights</h2>
-        <p>Experience luxury lighting crafted with precision, beauty and modern innovation.</p>
-        <a href="#" class="btn-primary">Discover Collection</a>
-    </div>
-</section>
-
-<section class="product-section" id="brand-grid">
-    <h2>Popular Products</h2>
-
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="assets/CrystalChandelier.jpg">
-            <h3>Crystal Chandelier</h3>
-            <p>₹4,999</p>
-        </div>
-
-        <div class="product-card">
-            <img src="assets/modernlight.jpg">
-            <h3>Modern Wall Lamp</h3>
-            <p>₹2,399</p>
-        </div>
-
-        <div class="product-card">
-            <img src="assets/DecorativeLEDLamp.jpg">
-            <h3>LED Ceiling Panel</h3>
-            <p>₹1,199</p>
-        </div>
-
-        <div class="product-card">
-            <img src="assets/GoldPendantLight.jpg">
-            <h3>Hanging Pendant</h3>
-            <p>₹3,299</p>
-        </div>
-    </div>
-</section>
-
-<section class="why-us">
-    <h2>Why Choose Us</h2>
-
-    <div class="why-grid">
-        <div class="why-item">
-            <i class="fa-solid fa-lightbulb"></i>
-            <h3>Premium Quality</h3>
-            <p>Top-rated lighting trusted by thousands.</p>
-        </div>
-
-        <div class="why-item">
-            <i class="fa-solid fa-truck-fast"></i>
-            <h3>Fast Delivery</h3>
-            <p>Quick, safe and reliable shipping.</p>
-        </div>
-
-        <div class="why-item">
-            <i class="fa-solid fa-award"></i>
-            <h3>Warranty Included</h3>
-            <p>All products come with assured warranty.</p>
-        </div>
-    </div>
-</section>
-
-<section class="reviews">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <div class="review-wrapper">
-
-        <div class="review-card active">
-    <i class="fa-solid fa-quote-left quote-icon"></i>
-    <p>"The lighting quality is unbelievable! My living room looks luxurious and warm. 
-       The brightness levels are perfect, and the design blends beautifully with my interior."</p>
-    <h4>— Priya Sharma</h4>
-</div>
-
-<div class="review-card">
-    <i class="fa-solid fa-quote-left quote-icon"></i>
-    <p>"Super fast delivery and elegant designs. The installation was easy and the lights 
-       instantly changed the vibe of my entire home. I absolutely loved the experience!"</p>
-    <h4>— Rohan Verma</h4>
-</div>
-
-<div class="review-card">
-    <i class="fa-solid fa-quote-left quote-icon"></i>
-    <p>"High-quality products at great prices. The finish and durability are outstanding. 
-       I purchased multiple lights for my new apartment and every piece looks premium."</p>
-    <h4>— Kavita Singh</h4>
-</div>
-
-<div class="review-card">
-<i class="fa-solid fa-quote-left quote-icon"></i>
-    <p>"Dolalight has completely transformed my home. The warm tone lights create a cozy 
-       atmosphere and the designs are modern yet timeless. Customer support was also amazing."</p>
-    <h4>— Arjun Mehta</h4>
-</div>
-
-<div class="review-card">
-    <i class="fa-solid fa-quote-left quote-icon"></i>
-    <p>"I purchased pendant lights for my dining area, and they look absolutely stunning. 
-       The build quality feels premium and the price is worth every penny. Highly satisfied!"</p>
-    <h4>— Sneha Kapoor</h4>
-</div>
-
-<div class="review-card">
-    <i class="fa-solid fa-quote-left quote-icon"></i>
-    <p>"From packaging to performance, everything was perfect. The chandelier I ordered 
-       added a luxury touch to my hall. I will definitely shop again for more lighting needs."</p>
-    <h4>— Manish Raj</h4>
-  </div>
-
-    <!-- Dots Nav -->
- <div class="review-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-</section>
-   <footer>
+    </section>
+  <footer>
   <div class="footer-features-strip">
   <div class="footer-container">
     <div class="features-grid">
@@ -264,8 +184,6 @@
     </div>
   </div>
 </div>
-
-  <!-- NEW FEATURE SECTION ENDS HERE -->
 
   <div class="footer-container">
     
@@ -340,7 +258,6 @@
     &copy; 2025 Dolalight.com | All Rights Reserved
   </div>
 </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
