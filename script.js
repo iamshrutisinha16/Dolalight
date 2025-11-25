@@ -149,7 +149,6 @@ if (outdoorTrigger && outdoorContent && outdoorImage) {
     outdoorObserver.observe(outdoorTrigger);
 }
 
-/* ==================== SCENARIO IMAGE TRACK ==================== */
 const scenarioTrack2 = document.querySelector(".scenario-track");
 
 if (scenarioTrack2) {
@@ -173,50 +172,74 @@ const io = new IntersectionObserver((entries)=>{
     });
 },{threshold:0.2});
 
-revealItems.forEach(el=>io.observe(el));
+function toggleLight() {
+    let bulb = document.getElementById("lightCircle");
+    bulb.style.opacity = bulb.style.opacity === "1" ? "0" : "1";
+}
 
-let lightsOn = false;
+// reveal on scroll
+const revealEls = document.querySelectorAll('[data-reveal]');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('reveal');
+  });
+},{threshold: 0.15});
+revealEls.forEach(el => revealObserver.observe(el));
 
-        function toggleLights() {
-            const lights = document.querySelectorAll('.ceiling-light');
-            const btn = document.querySelector('.toggle-btn');
-            
-            lightsOn = !lightsOn;
+// set current year
+const year = document.getElementById('year');
+if(year) year.textContent = new Date().getFullYear();
 
-            lights.forEach((light, index) => {
-                // Add a small delay for each light to turn on sequentially (Like a real long corridor)
-                setTimeout(() => {
-                    if (lightsOn) {
-                        light.classList.add('on');
-                    } else {
-                        light.classList.remove('on');
-                    }
-                }, index * 150); // 150ms delay per light
-            });
+// product preview toasts
+document.querySelectorAll('[data-preview]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const name = btn.getAttribute('data-preview');
+    previewToast(`${name} — Preview Activated`);
+  });
+});
 
-            if (lightsOn) {
-                btn.innerText = "Turn Lights Off";
-                btn.style.boxShadow = "0 0 20px var(--accent)";
-            } else {
-                btn.innerText = "Turn Lights On";
-                btn.style.boxShadow = "none";
-            }
-        }
+function previewToast(text){
+  const toast = document.createElement('div');
+  toast.className = 'preview-toast';
+  toast.textContent = text;
+  document.body.appendChild(toast);
+  toast.animate([{opacity:0, transform:'translateY(8px)'},{opacity:1, transform:'translateY(0)'},{opacity:0, transform:'translateY(-8px)'}],{duration:2000});
+  setTimeout(()=> toast.remove(),2200);
+}
 
-        // Scroll Animation Observer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        });
+// product buttons - scroll links
+document.querySelectorAll('[data-scroll]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sel = btn.getAttribute('data-scroll');
+    const el = document.querySelector(sel);
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
 
-        // Apply fade-in to product cards
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
+// demo room scene control
+document.querySelectorAll('[data-scene]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    setScene(btn.getAttribute('data-scene'));
+  });
+});
+
+function setScene(name){
+  const light = document.getElementById('demoLight');
+  if(!light) return;
+  light.style.transition = 'all .5s cubic-bezier(.2,.9,.3,1)';
+  if(name === 'Warm Relax'){
+    light.style.opacity = '1';
+    light.style.background = 'radial-gradient(circle at 30% 30%, rgba(230,194,122,0.98), rgba(182,139,58,0.75) 40%, rgba(182,139,58,0.05) 70%)';
+    light.style.boxShadow = '0 30px 80px rgba(182,139,58,0.18)';
+  } else if(name === 'Cool Focus'){
+    light.style.opacity = '1';
+    light.style.background = 'radial-gradient(circle at 30% 30%, rgba(200,230,255,0.98), rgba(130,170,230,0.75) 40%, rgba(130,170,230,0.04) 70%)';
+    light.style.boxShadow = '0 30px 80px rgba(130,170,230,0.12)';
+  } else if(name === 'Party'){
+    light.style.opacity = '1';
+    light.style.background = 'conic-gradient(from 0deg, #ff5f6d, #ffc371, #9be15d, #00c9ff, #9be15d)';
+    light.style.boxShadow = '0 30px 80px rgba(0,0,0,0.12)';
+    light.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:900,iterations:3});
+  }
+};
+  
