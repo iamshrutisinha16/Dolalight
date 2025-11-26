@@ -7,7 +7,7 @@ function toggleMenu() {
 /* ==================== BRAND LOGO SLIDER ==================== */
 const logoTrack = document.querySelector(".logo-track");
 if (logoTrack) {
-    logoTrack.innerHTML += logoTrack.innerHTML; // loop fix
+    logoTrack.innerHTML += logoTrack.innerHTML;
 }
 
 /* ==================== FADE-UP ANIMATIONS ==================== */
@@ -160,86 +160,170 @@ if (scenarioTrack2) {
     });
 }
 
-/* Reveal on Scroll */
-const revealItems = document.querySelectorAll(".fade-up");
-
-const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("active");
-            io.unobserve(entry.target);
-        }
-    });
-},{threshold:0.2});
-
-function toggleLight() {
-    let bulb = document.getElementById("lightCircle");
-    bulb.style.opacity = bulb.style.opacity === "1" ? "0" : "1";
-}
-
-// reveal on scroll
-const revealEls = document.querySelectorAll('[data-reveal]');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) e.target.classList.add('reveal');
-  });
-},{threshold: 0.15});
-revealEls.forEach(el => revealObserver.observe(el));
-
-// set current year
+/* ==================== YEAR UPDATE ==================== */
 const year = document.getElementById('year');
-if(year) year.textContent = new Date().getFullYear();
+if (year) year.textContent = new Date().getFullYear();
 
-// product preview toasts
+/* ==================== PREVIEW TOAST ==================== */
 document.querySelectorAll('[data-preview]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const name = btn.getAttribute('data-preview');
-    previewToast(`${name} — Preview Activated`);
-  });
+    btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-preview');
+        previewToast(`${name} — Preview Activated`);
+    });
 });
 
-function previewToast(text){
-  const toast = document.createElement('div');
-  toast.className = 'preview-toast';
-  toast.textContent = text;
-  document.body.appendChild(toast);
-  toast.animate([{opacity:0, transform:'translateY(8px)'},{opacity:1, transform:'translateY(0)'},{opacity:0, transform:'translateY(-8px)'}],{duration:2000});
-  setTimeout(()=> toast.remove(),2200);
+function previewToast(text) {
+    const toast = document.createElement('div');
+    toast.className = 'preview-toast';
+    toast.textContent = text;
+    document.body.appendChild(toast);
+    toast.animate([{ opacity: 0, transform: 'translateY(8px)' },
+        { opacity: 1, transform: 'translateY(0)' },
+        { opacity: 0, transform: 'translateY(-8px)' }],
+        { duration: 2000 });
+    setTimeout(() => toast.remove(), 2200);
 }
 
-// product buttons - scroll links
-document.querySelectorAll('[data-scroll]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const sel = btn.getAttribute('data-scroll');
-    const el = document.querySelector(sel);
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  });
-});
-
-// demo room scene control
+/* ==================== DEMO ROOM LIGHT SYSTEM ==================== */
 document.querySelectorAll('[data-scene]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    setScene(btn.getAttribute('data-scene'));
-  });
+    btn.addEventListener('click', () => {
+        setScene(btn.getAttribute('data-scene'));
+    });
 });
 
-function setScene(name){
-  const light = document.getElementById('demoLight');
-  if(!light) return;
-  light.style.transition = 'all .5s cubic-bezier(.2,.9,.3,1)';
-  if(name === 'Warm Relax'){
-    light.style.opacity = '1';
-    light.style.background = 'radial-gradient(circle at 30% 30%, rgba(230,194,122,0.98), rgba(182,139,58,0.75) 40%, rgba(182,139,58,0.05) 70%)';
-    light.style.boxShadow = '0 30px 80px rgba(182,139,58,0.18)';
-  } else if(name === 'Cool Focus'){
-    light.style.opacity = '1';
-    light.style.background = 'radial-gradient(circle at 30% 30%, rgba(200,230,255,0.98), rgba(130,170,230,0.75) 40%, rgba(130,170,230,0.04) 70%)';
-    light.style.boxShadow = '0 30px 80px rgba(130,170,230,0.12)';
-  } else if(name === 'Party'){
-    light.style.opacity = '1';
-    light.style.background = 'conic-gradient(from 0deg, #ff5f6d, #ffc371, #9be15d, #00c9ff, #9be15d)';
-    light.style.boxShadow = '0 30px 80px rgba(0,0,0,0.12)';
-    light.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:900,iterations:3});
-  }
-};
-  
+function setScene(name) {
+    const light = document.getElementById('demoLight');
+    if (!light) return;
+
+    light.style.transition = 'all .5s cubic-bezier(.2,.9,.3,1)';
+
+    if (name === 'Warm Relax') {
+        light.style.opacity = '1';
+        light.style.background =
+            'radial-gradient(circle at 30% 30%, rgba(230,194,122,0.98), rgba(182,139,58,0.75) 40%, rgba(182,139,58,0.05) 70%)';
+    }
+    else if (name === 'Cool Focus') {
+        light.style.opacity = '1';
+        light.style.background =
+            'radial-gradient(circle at 30% 30%, rgba(200,230,255,0.98), rgba(130,170,230,0.75) 40%, rgba(130,170,230,0.04) 70%)';
+    }
+    else if (name === 'Party') {
+        light.style.opacity = '1';
+        light.style.background =
+            'conic-gradient(from 0deg, #ff5f6d, #ffc371, #9be15d, #00c9ff, #9be15d)';
+        light.animate([{ transform: 'scale(1)' },
+            { transform: 'scale(1.06)' },
+            { transform: 'scale(1)' }],
+            { duration: 900, iterations: 3 });
+    }
+}
+
+/* ============================================================
+   ===================== ADD TO CART SYSTEM ====================
+   ============================================================ */
+
+// LOAD CART INTO ARRAY
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+/* ------------- ADD PRODUCT TO CART ------------- */
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(p => p.id === product.id);
+
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        cart.push({ ...product, qty: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(product.name + " added to cart!");
+}
+
+/* ------------- CART PAGE ELEMENTS ------------- */
+const cartItemsDiv = document.getElementById("cartItems");
+const subtotalBox = document.getElementById("subtotal");
+const totalBox = document.getElementById("total");
+
+/* ------------- LOAD CART ITEMS ------------- */
+function loadCart() {
+
+    if (!cartItemsDiv) return;
+
+    cartItemsDiv.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartItemsDiv.innerHTML = "<h3 style='text-align:center;'>Your Cart is Empty</h3>";
+        subtotalBox.innerText = "$0.00";
+        totalBox.innerText = "$0.00";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        cartItemsDiv.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.image}" class="cart-img">
+
+                <div class="details">
+                    <h3>${item.name}</h3>
+                    <p class="price">$${item.price}</p>
+
+                    <div class="qty-box">
+                        <button onclick="changeQty(${index}, -1)" class="qty-btn">-</button>
+                        <span class="qty">${item.qty}</span>
+                        <button onclick="changeQty(${index}, 1)" class="qty-btn">+</button>
+                    </div>
+                </div>
+
+                <button onclick="removeItem(${index})" class="remove-btn">Remove</button>
+            </div>
+        `;
+    });
+
+    calculateTotals();
+}
+
+/* ------------- CHANGE QTY ------------- */
+function changeQty(index, amount) {
+    if (cart[index].qty + amount > 0) {
+        cart[index].qty += amount;
+        saveCart();
+    }
+}
+
+/* ------------- REMOVE ITEM ------------- */
+function removeItem(index) {
+    cart.splice(index, 1);
+    saveCart();
+}
+
+/* ------------- TOTAL CALCULATION ------------- */
+function calculateTotals() {
+    let subtotal = 0;
+    cart.forEach(item => subtotal += item.price * item.qty);
+
+    subtotalBox.innerText = "$" + subtotal.toFixed(2);
+    totalBox.innerText = "$" + (subtotal + 5).toFixed(2);
+}
+
+/* ------------- SAVE CART & RELOAD ------------- */
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+}
+
+/* ------------- AUTO LOAD CART IF CART PAGE ------------- */
+loadCart();
+
+document.querySelectorAll(".add-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const product = {
+            id: btn.dataset.id,
+            name: btn.dataset.name,
+            price: Number(btn.dataset.price),
+            image: btn.dataset.image
+        };
+        addToCart(product);
+    });
+});
