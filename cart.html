@@ -7,19 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <div class="logo">
             <img src="assets/logo.png" />
         </div>
-
         <nav id="navbar">
             <div class="search-box">
                 <input type="text" placeholder="Search products...">
                 <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
             </div>
-
             <ul>
                 <li><a href="index.html">Home</a></li>
 
@@ -36,56 +33,66 @@
                     </ul>
                 </li>
 
-                <li><a href="index.html#our-projects">Project</a></li>
-
-                <li><a href="download.html">Download</a></li>
-
+                <li class="dropdown">
+                  <a>Uses Areas <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                   <li><a href="indoor.html">Indoor</a></li>
+                    <li><a href="SmartHomeLighting.html">Smart Home Lighting</a></li>
+                   <li><a href="outdoor.html">Outdoor</a></li>
+                   <li><a href="parking.html">Parking</a></li>
+                </ul>
+                </li>
+                 <li><a href="index.html#our-projects">Project</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
                 <li>
-                    <a href="cart.html" class="cart-btn">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                </li>
-
+                 <a href="cart.html" class="cart-btn">
+                     <i class="fa-solid fa-cart-shopping"></i>
+                 <span>Cart</span> 
+                  </a>
+                 </li>
                 <li>
                     <a href="login.html" class="account-btn">
                         <i class="fa-regular fa-id-badge"></i> Account
                     </a>
                 </li>
             </ul>
-
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
         </nav>
-
     </header>
+    <!-- CART SECTION -->
     <section class="cart-container">
 
-    <h2>Your Cart</h2>
+        <h2>Your Cart</h2>
 
-    <!-- CART ITEMS WILL LOAD HERE -->
-    <div id="cartItems"></div>
+        <!-- CART ITEMS -->
+        <div id="cartItems"></div>
 
-    <!-- BILLING SECTION -->
-    <div class="cart-summary">
-        <h3>Order Summary</h3>
+        <!-- BILLING SUMMARY -->
+        <div class="cart-summary">
+            <h3>Order Summary</h3>
 
-        <div class="summary-row">
-            <span>Subtotal:</span>
-            <span id="subtotal">₹0.00</span>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="subtotal">₹0.00</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span>₹49</span>
+            </div>
+
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="total">₹0.00</span>
+            </div>
+
+            <button class="checkout-btn">Proceed to Checkout</button>
         </div>
 
-        <div class="summary-row">
-            <span>Shipping:</span>
-            <span>₹49</span>
-        </div>
+    </section> 
 
-        <div class="summary-row total">
-            <span>Total:</span>
-            <span id="total">₹0.00</span>
-        </div>
+    <script src="script.js"></script>
 
-        <button class="checkout-btn">Proceed to Checkout</button>
-    </div>
+</body>
 
-</section>
-
+</html>

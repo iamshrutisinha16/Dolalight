@@ -39,7 +39,6 @@
                    <li><a href="indoor.html">Indoor</a></li>
                     <li><a href="SmartHomeLighting.html">Smart Home Lighting</a></li>
                    <li><a href="outdoor.html">Outdoor</a></li>
-                   <li><a href="basebuilding.html">Base Building</a></li>
                    <li><a href="parking.html">Parking</a></li>
                 </ul>
                 </li>
@@ -73,30 +72,37 @@
 
                 <img src="assets/loginimage.jpg" alt="Login Illustration" class="login-image">
             </div>
+       <!-- RIGHT FORM PANEL -->
+<div class="right-panel">
 
-            <!-- RIGHT FORM PANEL -->
-            <div class="right-panel">
+    <h2>Welcome Back!</h2>
 
-                <h2>Welcome Back!</h2>
+    <!-- Name Section -->
+    <div class="input-group">
+        <label for="userName">Full Name</label>
+        <input type="text" id="userName" placeholder="Enter your name" class="login-input">
+    </div>
 
-                <label>Email / Mobile Number</label>
-                <input type="text" placeholder="Enter Email or Mobile" class="login-input">
+    <!-- Mobile Section -->
+    <div class="input-group">
+        <label for="userMobile">Mobile Number</label>
+        <input type="number" id="userMobile" placeholder="Enter your mobile number" class="login-input">
+    </div>
 
-                <p class="terms">
-                    By continuing, you agree to our 
-                    <a href="#">Terms and Conditions </a> 
-                </p>
+    <p class="terms">
+        By continuing, you agree to our 
+        <a href="#">Terms and Conditions</a> 
+    </p>
 
-                <button class="otp-btn">Request OTP</button>
+    <!-- Login Button -->
+    <button class="otp-btn" onclick="handleLogin()">Login Now</button>
 
-                <p class="new-user">
-                    New to DOLA? <a href="#">Create an account</a>
-                </p>
+    <p class="new-user">
+        New to DOLA? <a href="#">Create an account</a>
+    </p>
 
-            </div>
-
-        </div>
-    </section>
+</div>
+</section>
      <footer>
   <div class="footer-features-strip">
   <div class="footer-container">
@@ -138,8 +144,6 @@
     </div>
   </div>
 </div>
-
-  <!-- NEW FEATURE SECTION ENDS HERE -->
 
   <div class="footer-container">
     
@@ -217,3 +221,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+

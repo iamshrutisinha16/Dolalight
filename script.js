@@ -12,7 +12,6 @@ if (logoTrack) {
 
 /* ==================== FADE-UP ANIMATIONS ==================== */
 document.addEventListener("DOMContentLoaded", () => {
-
     const fadeUpItems = document.querySelectorAll(".fade-up");
 
     if (fadeUpItems.length > 0) {
@@ -59,24 +58,21 @@ if (cards.length > 0 && dots.length > 0 && cards.length === dots.length) {
     showReview(0);
 }
 
-/* ==================== REVEAL ON SCROLL (Generic) ==================== */
-document.addEventListener("DOMContentLoaded", () => {
-    const revealElements = document.querySelectorAll(
-        ".reveal, .diff-card, .team-card, .fade-item, .fade-box, .product-card, .fade-left, .fade-right"
-    );
+/* ==================== GENERIC SCROLL REVEAL ==================== */
+const revealElements = document.querySelectorAll(
+    ".reveal, .diff-card, .team-card, .fade-item, .fade-box, .product-card, .fade-left, .fade-right, [data-reveal]"
+);
 
-    if (revealElements.length > 0) {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active", "show");
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
+window.addEventListener("scroll", () => {
+    revealElements.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const revealTop = el.getBoundingClientRect().top;
+        const revealPoint = 150;
 
-        revealElements.forEach(item => revealObserver.observe(item));
-    }
+        if (revealTop < windowHeight - revealPoint) {
+            el.classList.add("active", "show");
+        }
+    });
 });
 
 /* ==================== FAQ ==================== */
@@ -111,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(() => {
         icons.forEach(icon => {
             let iconList = icon.dataset.icons.split(",").map(i => i.trim());
-            let index = parseInt(icon.dataset.index);
+            let index = parseInt(icon.dataset.index) || 0;
             icon.style.opacity = "0";
 
             setTimeout(() => {
@@ -149,8 +145,8 @@ if (outdoorTrigger && outdoorContent && outdoorImage) {
     outdoorObserver.observe(outdoorTrigger);
 }
 
+/* ==================== SCENARIO TRACK HOVER PAUSE ==================== */
 const scenarioTrack2 = document.querySelector(".scenario-track");
-
 if (scenarioTrack2) {
     scenarioTrack2.addEventListener("mouseover", () => {
         scenarioTrack2.style.animationPlayState = "paused";
@@ -218,17 +214,10 @@ function setScene(name) {
     }
 }
 
-/* ============================================================
-   ===================== ADD TO CART SYSTEM ====================
-   ============================================================ */
-
-// LOAD CART INTO ARRAY
+/* ==================== CART SYSTEM ==================== */
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-/* ------------- ADD PRODUCT TO CART ------------- */
 function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
     let existing = cart.find(p => p.id === product.id);
 
     if (existing) {
@@ -239,43 +228,39 @@ function addToCart(product) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
     alert(product.name + " added to cart!");
+    loadCart(); 
 }
 
-/* ------------- CART PAGE ELEMENTS ------------- */
+// Elements select karna
 const cartItemsDiv = document.getElementById("cartItems");
 const subtotalBox = document.getElementById("subtotal");
 const totalBox = document.getElementById("total");
 
-/* ------------- LOAD CART ITEMS ------------- */
 function loadCart() {
-
     if (!cartItemsDiv) return;
 
     cartItemsDiv.innerHTML = "";
-
     if (cart.length === 0) {
-        cartItemsDiv.innerHTML = "<h3 style='text-align:center;'>Your Cart is Empty</h3>";
-        subtotalBox.innerText = "$0.00";
-        totalBox.innerText = "$0.00";
+        cartItemsDiv.innerHTML = "<h3 style='text-align:center; padding: 20px;'>Your Cart is Empty</h3>";
+        if(subtotalBox) subtotalBox.innerText = "₹0.00";
+        if(totalBox) totalBox.innerText = "₹0.00";
         return;
     }
 
+    // Cart Items ko Loop karke Show karna
     cart.forEach((item, index) => {
         cartItemsDiv.innerHTML += `
             <div class="cart-item">
-                <img src="${item.image}" class="cart-img">
-
+                <img src="${item.image}" class="cart-img" alt="${item.name}">
                 <div class="details">
                     <h3>${item.name}</h3>
-                    <p class="price">$${item.price}</p>
-
+                    <p class="price">₹${item.price}</p> <!-- Dollar hata kar Rupee kiya -->
                     <div class="qty-box">
                         <button onclick="changeQty(${index}, -1)" class="qty-btn">-</button>
                         <span class="qty">${item.qty}</span>
                         <button onclick="changeQty(${index}, 1)" class="qty-btn">+</button>
                     </div>
                 </div>
-
                 <button onclick="removeItem(${index})" class="remove-btn">Remove</button>
             </div>
         `;
@@ -284,38 +269,44 @@ function loadCart() {
     calculateTotals();
 }
 
-/* ------------- CHANGE QTY ------------- */
 function changeQty(index, amount) {
+    // Quantity 1 se kam nahi honi chahiye
     if (cart[index].qty + amount > 0) {
         cart[index].qty += amount;
         saveCart();
     }
 }
 
-/* ------------- REMOVE ITEM ------------- */
 function removeItem(index) {
-    cart.splice(index, 1);
+    cart.splice(index, 1); // Item delete
     saveCart();
 }
 
-/* ------------- TOTAL CALCULATION ------------- */
 function calculateTotals() {
+    // Agar elements nahi mile to error na aaye
+    if (!subtotalBox || !totalBox) return;
+
     let subtotal = 0;
     cart.forEach(item => subtotal += item.price * item.qty);
 
-    subtotalBox.innerText = "$" + subtotal.toFixed(2);
-    totalBox.innerText = "$" + (subtotal + 5).toFixed(2);
+    // Shipping Logic: Agar cart mein saman hai to ₹49, nahi to ₹0
+    let shipping = cart.length > 0 ? 49 : 0;
+    let total = subtotal + shipping;
+
+    // Values update karna (₹ symbol ke sath)
+    subtotalBox.innerText = "₹" + subtotal.toFixed(2);
+    totalBox.innerText = "₹" + total.toFixed(2);
 }
 
-/* ------------- SAVE CART & RELOAD ------------- */
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
     loadCart();
 }
 
-/* ------------- AUTO LOAD CART IF CART PAGE ------------- */
+// Page load hone par cart show karo
 loadCart();
 
+// "Add to Cart" Buttons par click event lagana
 document.querySelectorAll(".add-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         const product = {
@@ -327,3 +318,30 @@ document.querySelectorAll(".add-btn").forEach(btn => {
         addToCart(product);
     });
 });
+function handleLogin() {
+    // 1. HTML se values lena
+    const nameInput = document.getElementById("userName"); // ID match honi chahiye
+    const mobileInput = document.getElementById("userMobile"); // ID match honi chahiye
+
+    const name = nameInput.value.trim();
+    const mobile = mobileInput.value.trim();
+
+    // 2. Validation (Check karna)
+    if (name === "") {
+        alert("Please enter your Full Name.");
+        return;
+    }
+
+    if (mobile === "" || mobile.length !== 10) {
+        alert("Please enter a valid 10-digit Mobile Number.");
+        return;
+    }
+
+    // 3. Data Save karna
+    localStorage.setItem("dolaUser", name);
+    localStorage.setItem("dolaMobile", mobile);
+
+    // 4. Success aur Redirect
+    alert(`Login Successful! Welcome ${name}`);
+    window.location.href = "index.html";
+}
