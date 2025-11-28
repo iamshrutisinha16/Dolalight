@@ -13,12 +13,10 @@
             <img src="assets/logo.png" />
         </div>
         <nav id="navbar">
-                 <div class="search-box">
-                  <input type="text" id="searchInput" placeholder="Search products...">
-                  <span class="search-icon" onclick="searchMyWebsite()">
-               <i class="fa-solid fa-magnifying-glass"></i>
-             </span>
-          </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search products...">
+                <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
 
@@ -30,7 +28,7 @@
                         <li><a href="shop-by-product.html">Shop by Product</a></li>
                         <li><a href="shop-by-room.html">Shop by Room</a></li>
                         <li><a href="shop-by-collection.html">Shop by Collection</a></li>
-                         <li><a href="shop-by-dola.html">Shop by dola</a></li>
+                        <li><a href="shop-by-brand.html">Shop by dola</a></li>
                         <li><a href="shop-by-style.html">Shop by style</a></li>
                     </ul>
                 </li>
@@ -53,48 +51,42 @@
                   </a>
                  </li>
                 <li>
-                    <a href="login.html" class="account-btn">
-                        <i class="fa-regular fa-id-badge"></i> Account
-                    </a>
+                 <a href="login.html" class="account-btn">
+                   <i class="fa-regular fa-id-badge"></i> Account
+                </a>
                 </li>
             </ul>
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
         </nav>
     </header>
-    <!-- CART SECTION -->
-    <section class="cart-container">
+    <section class="checkout-page">
 
-        <h2>Your Cart</h2>
+    <h2>Checkout</h2>
 
-        <!-- CART ITEMS -->
-        <div id="cartItems"></div>
+    <div class="checkout-wrapper">
 
-        <!-- BILLING SUMMARY -->
-        <div class="cart-summary">
-            <h3>Order Summary</h3>
+        <!-- ORDER SUMMARY -->
+        <div class="order-box">
+            <h3>Your Order</h3>
 
-            <div class="summary-row">
-                <span>Subtotal:</span>
-                <span id="subtotal">₹0.00</span>
-            </div>
+            <div id="checkoutItems"></div>
 
-            <div class="summary-row">
-                <span>Shipping:</span>
-                <span>₹49</span>
-            </div>
-
-            <div class="summary-row total">
-                <span>Total:</span>
-                <span id="total">₹0.00</span>
-            </div>
-            <button class="checkout-btn">Proceed to Checkout</button>
-
+            <p class="summary-line"><strong>Subtotal: </strong><span id="chkSubtotal"></span></p>
+            <p class="summary-line"><strong>Shipping: </strong>₹49</p>
+            <p class="summary-line total"><strong>Total: </strong><span id="chkTotal"></span></p>
         </div>
 
-    </section> 
+        <!-- USER FORM -->
+        <form class="checkout-form">
+            <h3>Billing Details</h3>
 
-    <script src="script.js"></script>
+            <input type="text" placeholder="Full Name" id="name" required>
+            <input type="text" placeholder="Phone Number" id="phone" required>
+            <input type="text" placeholder="Full Address" id="address" required>
 
-</body>
+            <button type="button" id="placeOrderBtn">Place Order</button>
+        </form>
 
-</html>
+    </div>
+
+</section>
