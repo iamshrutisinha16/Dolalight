@@ -1,15 +1,11 @@
-/* ==================== SEARCH SYSTEM (NEW ADDED) ==================== */
+
 function searchMyWebsite() {
-    // Input element dhundo
     const searchInput = document.getElementById("searchInput");
     
-    // Agar input box page par nahi hai (kisi aur page par) to error na aaye
     if (!searchInput) return;
 
-    // Value lo aur lowercase mein convert karo
     const query = searchInput.value.toLowerCase().trim();
 
-    // Agar khali hai to alert do
     if (query === "") {
         alert("Please type something to search (e.g., Indoor, Smart).");
         return;
