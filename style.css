@@ -299,6 +299,7 @@ ul li .dropdown-menu li a:hover {
 @media (max-width: 480px) {
     .slide img {
         height: 300px; /* Reduced height for mobile banner */
+        width: 300px;
     }
 
     .logo img {
@@ -2832,6 +2833,49 @@ font-size: 0.9rem;
   inset: 0;
   background: rgba(0,0,0,0.3);
   animation: fadeOverlay 1.3s ease-in-out forwards;
+}
+
+@keyframes fadeOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for tablets and mobile */
+@media (max-width: 1024px) {
+  .contact-banner {
+    height: 250px; /* slightly smaller height */
+    background-position: center top; /* keep important part visible */
+  }
+  @keyframes bannerZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); } /* less zoom on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-banner {
+    height: 200px; /* mobile height */
+    background-position: center top; /* adjust focal point */
+  }
+  @keyframes bannerZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); } /* minimal zoom for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-banner {
+    height: 150px; /* very small phones */
+    background-position: center top;
+  }
+  @keyframes bannerZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); } /* subtle zoom for tiny screens */
+  }
 }
 
 @keyframes fadeOverlay {
