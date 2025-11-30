@@ -246,7 +246,10 @@ ul li .dropdown-menu li a:hover {
     }
 
     .search-box {
-        display: none; 
+        display: flex;
+        flex: 1; /* take remaining space */
+        margin: 0 10px;
+        align-items: center; /* vertical alignment */
     }
 
     nav ul {
@@ -310,6 +313,11 @@ ul li .dropdown-menu li a:hover {
         position: absolute;
         right: 60px;
         top: 25px; /* adjust from top */
+    }
+     .search-box {
+        width: 72%; /* reduce width */
+        flex: none; /* stop flex from stretching */
+        margin-right: 32px; /* adjust spacing from menu icon */
     }
 
     .menu-icon {
@@ -3868,10 +3876,10 @@ font-size: 0.9rem;
 
 @media (max-width: 1024px) {
     .banner-section {
-        height: 50vh;
+        height: 40vh;
     }
     .banner-title {
-        font-size: 2.8rem;
+        font-size: 2.7rem;
     }
 }
 
@@ -3898,7 +3906,7 @@ font-size: 0.9rem;
 
 @media (max-width: 480px) {
     .banner-section {
-        height: 25vh; 
+        height: 20vh; 
     }
     .banner-title {
         font-size: 1.6rem;
@@ -4849,11 +4857,11 @@ font-size: 0.9rem;
 
 @media (max-width: 480px) {
     .collection-banner {
-        height: 280px; 
+        height: 240px; 
     }
 
     .banner-content h1 {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 1.2;
     }
     
@@ -5287,10 +5295,10 @@ h2 {
 .btn-primary:hover {
     background:  #ff7500;
 }
-
-/* shop by brand*/
+/* ---------------- Shop by Brand ---------------- */
 .brand-hero {
     height: 60vh;
+    max-height: 500px;
     background: url("assets/AboutUsBanner.jpg") center/cover no-repeat;
     position: relative;
     display: flex;
@@ -5325,11 +5333,13 @@ h2 {
     opacity: 0.9;
 }
 
+/* Banner Animation */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Brand Slider */
 .brand-slider {
     overflow: hidden;
     padding: 20px 0;
@@ -5349,14 +5359,14 @@ h2 {
     margin-top: 20px;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
     width: max-content; 
     animation: scroll 20s linear infinite;
 }
 
 .logo-track img {
-    height: 200px;
-    width: auto;
+    height: 150px;
+    max-width: 100%;
     filter: grayscale(1);
     transition: 0.3s ease;
     border-radius: 10px;
@@ -5368,18 +5378,15 @@ h2 {
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
+/* Category Grid */
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
 }
 
 .cat-item {
@@ -5387,8 +5394,7 @@ h2 {
     border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
-    height: 260px;
-    transform: translateY(0);
+    height: 220px;
     transition: transform .45s ease, box-shadow .45s ease;
 }
 
@@ -5403,105 +5409,81 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.15)
-    );
-    opacity: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
     transition: opacity .4s ease;
     z-index: 1;
 }
 
 .cat-item h3 {
     position: absolute;
-    bottom: 18px;
-    left: 20px;
-    font-size: 22px;
+    bottom: 12px;
+    left: 15px;
+    font-size: 18px;
     font-weight: 700;
     color: #fff;
     z-index: 2;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.5px;
     text-shadow: 0 4px 12px rgba(0,0,0,0.8);
-    opacity: 1;
     transition: transform .45s ease, opacity .45s ease;
 }
 
-.cat-item:hover img {
-    transform: scale(1.12);
-}
+.cat-item:hover img { transform: scale(1.12); }
+.cat-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.cat-item:hover::after { opacity: 0.8; }
+.cat-item:hover h3 { transform: translateY(-3px); }
 
-.cat-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
-
-.cat-item:hover::after {
-    opacity: 0.8;
-}
-
-.cat-item:hover h3 {
-    transform: translateY(-5px);
-}
-
-@keyframes fadeUp {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
+/* Brand Spotlight */
 .brand-spotlight {
     display: flex;
-    align-items: flex-start;   
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
     padding: 4rem 6%;
 }
 
 .brand-spotlight .spot-img {
     width: 45%;
+    max-width: 400px;
     border-radius: 20px;
 }
 
 .spot-content {
     width: 45%;
-    text-align: center;    
-    margin-top: 0; 
+    max-width: 400px;
+    text-align: center;
 }
 
 .spot-content h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    text-align: center;
 }
 
 .spot-content p {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.6;
     margin-bottom: 2rem;
     color: #333;
-    text-align: center;
 }
 
+/* Buttons */
 .btn-primary {
     background: #ffce00;
-    padding: 1rem 2.4rem;
+    padding: 1rem 2rem;
     border-radius: 50px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #000;
-    display: inline-block;
     transition: .3s ease;
 }
 
-.btn-primary:hover {
-    background: #e3b700;
-}
+.btn-primary:hover { background: #e3b700; }
 
+/* Product Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
 }
 
 .product-card {
@@ -5516,167 +5498,59 @@ h2 {
 
 .product-card img {
     width: 100%;
-    height: 220px;
+    height: 180px;
     border-radius: 14px;
     object-fit: cover;
     transition: transform 0.35s ease;
 }
 
-.product-card:hover img {
-    transform: scale(1.07);
-}
+.product-card:hover img { transform: scale(1.07); }
+.product-card:hover { transform: translateY(-8px); }
 
-.product-card:hover {
-    transform: translateY(-10px);
-}
+.product-card h3 { margin-top: 10px; font-size: 16px; font-weight: 700; }
+.product-card p { margin-top: 5px; color: #ff7500; font-size: 15px; font-weight: 600; }
 
-.product-card h3 {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.product-card p {
-    margin-top: 5px;
-    color:  #ff7500;
-    font-size: 17px;
-    font-weight: 600;
-}
-
+/* Why Grid */
 .why-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
 }
 
-.why-item {
-    background: #f8fafc;
-    padding: 30px;
-    border-radius: 16px;
-    text-align: center;
-    transition: 0.3s ease;
-}
+.why-item { background: #f8fafc; padding: 25px; border-radius: 16px; text-align: center; transition: 0.3s ease; }
+.why-item:hover { transform: translateY(-5px); }
+.why-item i { font-size: 36px; margin-bottom: 10px; color: #2563eb; }
 
-.why-item:hover {
-    transform: translateY(-8px);
-}
+/* Reviews */
+.reviews { padding: 50px 15px; background: linear-gradient(to bottom, #f8fafc, #eef2ff); text-align: center; }
+.section-title { font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 30px; }
 
-.why-item i {
-    font-size: 40px;
-    margin-bottom: 12px;
-    color: #2563eb;
-}
-
-.reviews {
-    padding: 70px 20px;
-    background: linear-gradient(to bottom, #f8fafc, #eef2ff);
-    text-align: center;
-}
-
-.section-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 40px;
-}
-
-.review-wrapper {
-    max-width: 750px;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
-}
-
-.review-card {
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 40px 25px;
-    margin: auto;
-    width: 100%;
-    display: none;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.10);
-    animation: fadeSlide 0.7s ease;
-}
-
-.review-card.active {
-    display: block;
-}
-
-.review-card p {
-    font-size: 18px;
-    color: #334155;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    width: 100%;
-}
-
-.review-card h4 {
-    font-size: 17px;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.quote-icon {
-    font-size: 35px;
-    color: #3b82f6;
-    margin-bottom: 10px;
-}
-
-.review-dots {
-    margin-top: 20px;
-}
-
-.dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: #94a3b8;
-    border-radius: 50%;
-    margin: 0 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.dot.active {
-    background: #3b82f6;
-    transform: scale(1.3);
-}
-
-/* Animation */
-@keyframes fadeSlide {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .review-card {
-        width: 95%;
-        padding: 30px 20px;
-    }
-}
-
+/* Responsive Media Queries */
 @media (max-width: 850px) {
-    .brand-spotlight {
-        flex-direction: column;
-        text-align: center;
-    }
+    .brand-spotlight { flex-direction: column; text-align: center; gap: 2rem; }
+    .spot-img, .spot-content { width: 100%; max-width: 100%; }
+}
 
-    .spot-img {
-        width: 100%;
-    }
+@media (max-width: 600px) {
+    .brand-hero { height: 40vh; max-height: 300px; }
+    .brand-hero h1 { font-size: 1.8rem; }
+    .brand-hero p { font-size: 1rem; }
+    
+    .cat-item { height: 180px; }
+    .cat-item h3 { font-size: 16px; bottom: 8px; left: 10px; }
 
-    .spot-content h2 {
-        text-align: center;
-    }
+    .product-card img { height: 140px; }
+    .product-card h3 { font-size: 14px; }
+    .product-card p { font-size: 13px; }
+
+    .why-item i { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+    .brand-hero { height: 35vh; max-height: 250px; }
+    .brand-slider h2 { font-size: 24px; }
+    .logo-track img { height: 100px; }
+    .section-title { font-size: 24px; }
 }
 
 /* shop by style */
