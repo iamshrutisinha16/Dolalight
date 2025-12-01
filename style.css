@@ -233,7 +233,7 @@ ul li .dropdown-menu li a:hover {
     to { opacity: 1; }
 }
 /* ----------------- Responsive Mobile Fix ----------------- */
-/* ===================== MOBILE (MAX-WIDTH: 900PX) ===================== */
+
 @media (max-width: 900px) {
 
     header {
@@ -360,14 +360,15 @@ ul li .dropdown-menu li a:hover {
     }
 
     .search-box {
-        width: 145px;
+        width: 160px;
         padding: 5px 10px;
     }
 
     /* CART FIX (Yeh sabse important) */
     .cart-btn {
         top: 30px;
-        right: 50px;  /* ⭐ correct position */
+        right: 50px; 
+        margin-bottom: 6vh; /* ⭐ correct position */
     }
 
     .cart-btn i {
@@ -6627,5 +6628,320 @@ body {
     }
     .order-box, .checkout-form {
         flex: 1 1 100%;
+    }
+}
+
+/* ================= BULB HERO ================= */
+.bulb-hero {
+    height: 400px;
+    background: linear-gradient(to right, #000000, #1a1a1a), url('https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=2068&auto=format&fit=crop');
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    color: white;
+    position: relative;
+}
+
+.bulb-hero-text {
+    max-width: 600px;
+    animation: slideInLeft 1s ease;
+}
+
+.bulb-hero-text .tagline {
+    color: #ffcc00;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.bulb-hero-text h1 {
+    font-size: 48px;
+    margin: 10px 0;
+    line-height: 1.1;
+}
+
+.bulb-hero-text p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.shop-now-btn {
+    padding: 12px 30px;
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.shop-now-btn:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+/* ================= FEATURES STRIP ================= */
+.features-strip {
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    padding: 30px 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-box {
+    text-align: center;
+    min-width: 150px;
+}
+
+.feature-box i {
+    font-size: 30px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.feature-box h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.feature-box p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ================= SHOP SECTION ================= */
+.shop-section {
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    color: #222;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: #ffcc00;
+    margin: 10px auto;
+}
+
+/* Tabs */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: #000;
+    color: #ffcc00;
+    border-color: #000;
+}
+
+/* ================= BULB GRID ================= */
+.bulb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Product Card */
+.bulb-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.bulb-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    border-color: #ffcc00;
+}
+
+.bulb-img-box {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 20px;
+    position: relative;
+}
+
+.bulb-img-box img {
+    max-height: 100%;
+    max-width: 100%;
+    transition: 0.4s;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+}
+
+/* Hover Effect: Light Glow */
+.bulb-card:hover .bulb-img-box img {
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.6)); /* Bulb jalne ka effect */
+    transform: scale(1.05);
+}
+
+.watt-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.type-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #eee;
+    color: #333;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.bulb-details {
+    padding: 15px;
+    text-align: left;
+}
+
+.bulb-details h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.tech-specs {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.add-cart-icon {
+    width: 35px;
+    height: 35px;
+    background: #f4f4f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #333;
+}
+
+.add-cart-icon:hover {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* ================= INFO SECTION ================= */
+.info-section {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.info-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.info-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-text h2 {
+    margin-bottom: 15px;
+}
+
+.info-text ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.info-text li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.info-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bulb-hero {
+        height: 350px;
+        text-align: center;
+        justify-content: center;
+    }
+    .bulb-hero-text h1 {
+        font-size: 32px;
+    }
+    .features-strip {
+        gap: 30px;
     }
 }

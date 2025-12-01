@@ -405,3 +405,138 @@ if (placeOrderBtn) {
         window.location.href = "index.html";
     });
 }
+
+// REALISTIC LED BULB DATA
+const bulbData = [
+    {
+        id: 101,
+        name: "9W Cool Day Light LED",
+        watt: "9 Watt",
+        type: "standard",
+        base: "B22",
+        color: "6500K",
+        price: "₹99",
+        image: "https://images.unsplash.com/photo-1623126908029-58cb08a2b272?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 102,
+        name: "12W Warm White LED",
+        watt: "12 Watt",
+        type: "standard",
+        base: "E27",
+        color: "3000K",
+        price: "₹149",
+        image: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=500&q=80" // Warm look
+    },
+    {
+        id: 103,
+        name: "Smart Wi-Fi RGB Bulb",
+        watt: "10 Watt",
+        type: "smart",
+        base: "B22",
+        color: "16M Colors",
+        price: "₹699",
+        image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 104,
+        name: "Inverter Emergency Bulb",
+        watt: "9 Watt",
+        type: "inverter",
+        base: "B22",
+        color: "White",
+        price: "₹349",
+        image: "https://images.unsplash.com/photo-1623126908029-58cb08a2b272?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 105,
+        name: "Vintage Filament Edison",
+        watt: "4 Watt",
+        type: "filament",
+        base: "E27",
+        color: "Golden",
+        price: "₹299",
+        image: "https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 106,
+        name: "High Power Hammer LED",
+        watt: "40 Watt",
+        type: "standard",
+        base: "B22",
+        color: "6500K",
+        price: "₹450",
+        image: "https://images.unsplash.com/photo-1623126908029-58cb08a2b272?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 107,
+        name: "Music Sync Smart Bulb",
+        watt: "12 Watt",
+        type: "smart",
+        base: "E27",
+        color: "RGB + Music",
+        price: "₹850",
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 108,
+        name: "Candle Filament Bulb",
+        watt: "4 Watt",
+        type: "filament",
+        base: "E14",
+        color: "Warm",
+        price: "₹210",
+        image: "https://images.unsplash.com/photo-1540932296774-7097c27d42df?auto=format&fit=crop&w=500&q=80"
+    }
+];
+
+// Display Function
+function renderBulbs(items) {
+    const grid = document.getElementById('bulbGrid');
+    grid.innerHTML = "";
+
+    items.forEach(bulb => {
+        const card = `
+            <div class="bulb-card fade-up">
+                <div class="bulb-img-box">
+                    <span class="watt-badge">${bulb.watt}</span>
+                    <span class="type-badge">${bulb.base}</span>
+                    <img src="${bulb.image}" alt="${bulb.name}">
+                </div>
+                <div class="bulb-details">
+                    <h3>${bulb.name}</h3>
+                    <span class="tech-specs">Color: ${bulb.color} | Base: ${bulb.base}</span>
+                    <div class="price-row">
+                        <span class="price">${bulb.price}</span>
+                        <div class="add-cart-icon"><i class="fa-solid fa-cart-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        `;
+        grid.innerHTML += card;
+    });
+}
+
+// Filter Function
+function filterBulbs(category) {
+    // Button Active Logic
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    if (category === 'all') {
+        renderBulbs(bulbData);
+    } else {
+        const filtered = bulbData.filter(item => item.type === category);
+        renderBulbs(filtered);
+    }
+}
+
+// Smooth Scroll
+function scrollToGrid() {
+    document.getElementById('bulbShop').scrollIntoView({behavior: 'smooth'});
+}
+
+// Initial Load
+document.addEventListener('DOMContentLoaded', () => {
+    renderBulbs(bulbData);
+});

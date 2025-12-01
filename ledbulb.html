@@ -13,12 +13,12 @@
             <img src="assets/logo.png" />
         </div>
         <nav id="navbar">
-           <div class="search-box">
+            <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search products...">
     <span class="search-icon" onclick="searchMyWebsite()">
         <i class="fa-solid fa-magnifying-glass"></i>
     </span>
-     </div>
+       </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
 
@@ -31,13 +31,13 @@
                         <li><a href="shop-by-product.html">Shop by Product</a></li>
                         <li><a href="shop-by-room.html">Shop by Room</a></li>
                         <li><a href="shop-by-collection.html">Shop by Collection</a></li>
-                         
+                          
                         <li><a href="shop-by-style.html">Shop by style</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
-                  <a> Uses Areas <i class="fa-solid fa-caret-down"></i></a>
+                  <a>Uses Areas <i class="fa-solid fa-caret-down"></i></a>
                 <ul class="dropdown-menu">
                    <li><a href="indoor.html">Indoor</a></li>
                     <li><a href="SmartHomeLighting.html">Smart Home Lighting</a></li>
@@ -64,105 +64,103 @@
                  <span>Cart</span> 
                   </a>
                  </li>
-
                 <li>
-                    <a href="login.html" class="account-btn">
-                        <i class="fa-regular fa-id-badge"></i> Account
-                    </a>
+                 <a href="login.html" class="account-btn">
+                   <i class="fa-regular fa-id-badge"></i> Account
+                </a>
                 </li>
             </ul>
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
         </nav>
     </header>
-  
-    <section class="login-container">
-
-        <div class="login-box">
-            <div class="left-panel">
-                <img src="assets/loginimage.jpg" alt="Login Illustration" class="login-image">
-            </div>
-
-        <div class="right-panel">
-      <h2>Welcome Back!</h2>
-    <div class="input-group">
-        <label for="userName">Full Name</label>
-        <input type="text" id="userName" placeholder="Enter your name" class="login-input">
+   <!-- ================= BULB HERO SECTION ================= -->
+<section class="bulb-hero">
+    <div class="bulb-hero-text fade-up">
+        <span class="tagline">Next Gen Lighting</span>
+        <h1>Premium LED Bulbs</h1>
+        <p>Save up to 85% energy with our high-lumen, flicker-free LED technology. Available in Cool Day, Warm White, and RGB.</p>
+        <button class="shop-now-btn" onclick="scrollToGrid()">Shop Now</button>
     </div>
-
-    <!-- Mobile Section -->
-    <div class="input-group">
-        <label for="userMobile">Mobile Number</label>
-        <input type="number" id="userMobile" placeholder="Enter your mobile number" class="login-input">
-    </div>
-
-    <p class="terms">
-        By continuing, you agree to our 
-        <a href="#">Terms and Conditions</a> 
-    </p>
-
-    <!-- Login Button -->
-    <button class="otp-btn" onclick="handleLogin()">Login Now</button>
-
-    <p class="new-user">
-        New to DOLA? <a href="#">Create an account</a>
-    </p>
-
-</div>
 </section>
-     <footer>
-  <div class="footer-features-strip">
-  <div class="footer-container">
-    <div class="features-grid">
 
-      <!-- Item 1 -->
-      <div class="feature-item">
-        <div class="feature-icon-circle">
-          <i class="fa-solid dynamic-icon"
-             data-icons="fa-microchip, fa-bolt, fa-robot, fa-wifi, fa-lightbulb"
-             data-index="0"></i>
-        </div>
-        <h4>Advance Technology</h4>
-        <p>Lighting powered by IoT</p>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="feature-item">
-        <div class="feature-icon-circle">
-          <i class="fa-solid dynamic-icon"
-             data-icons="fa-earth-americas, fa-leaf, fa-water, fa-recycle, fa-tree"
-             data-index="0"></i>
-        </div>
-        <h4>Good For Planet</h4>
-        <p>Sustainable & Responsible</p>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="feature-item">
-        <div class="feature-icon-circle">
-          <i class="fa-solid dynamic-icon"
-             data-icons="fa-medal, fa-star, fa-trophy, fa-award, fa-certificate"
-             data-index="0"></i>
-        </div>
-        <h4>International Design Standards</h4>
-        <p>Global Standards & Flair</p>
-      </div>
-
+<!-- ================= FEATURES STRIP ================= -->
+<section class="features-strip">
+    <div class="feature-box">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Energy Efficient</h3>
+        <p>Saves 85% Electricity</p>
     </div>
-  </div>
-</div>
+    <div class="feature-box">
+        <i class="fa-solid fa-eye"></i>
+        <h3>Eye Comfort</h3>
+        <p>Flicker Free Technology</p>
+    </div>
+    <div class="feature-box">
+        <i class="fa-solid fa-hourglass-half"></i>
+        <h3>Long Life</h3>
+        <p>25,000+ Burning Hours</p>
+    </div>
+    <div class="feature-box">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>2 Year Warranty</h3>
+        <p>On all technical faults</p>
+    </div>
+</section>
 
-  <div class="footer-container">
+<!-- ================= SHOP SECTION ================= -->
+<section class="shop-section" id="bulbShop">
+    
+    <!-- Title -->
+    <div class="section-header">
+        <h2>Explore Our Range</h2>
+        <div class="divider"></div>
+    </div>
+
+    <!-- Advanced Filters -->
+    <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterBulbs('all')">All Bulbs</button>
+        <button class="tab-btn" onclick="filterBulbs('standard')">Standard (9W-20W)</button>
+        <button class="tab-btn" onclick="filterBulbs('smart')">Smart WiFi / RGB</button>
+        <button class="tab-btn" onclick="filterBulbs('filament')">Vintage Filament</button>
+        <button class="tab-btn" onclick="filterBulbs('inverter')">Emergency (Inverter)</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="bulb-grid" id="bulbGrid">
+        <!-- JS will inject bulbs here -->
+    </div>
+
+</section>
+
+<!-- ================= INFO SECTION (Color Temp) ================= -->
+<section class="info-section">
+    <div class="info-container">
+        <div class="info-text">
+            <h2>Choose Your Color Temperature</h2>
+            <p>Sahi light chunein apne mood ke hisab se.</p>
+            <ul>
+                <li><strong><span style="color: #ffcc00">●</span> 3000K (Warm White):</strong> Relaxing, Bedroom & Living Room.</li>
+                <li><strong><span style="color: #ffeeb0">●</span> 4000K (Natural White):</strong> Kitchen & Workspace.</li>
+                <li><strong><span style="color: #ffffff; text-shadow: 0 0 5px #ccc;">●</span> 6500K (Cool Day Light):</strong> Brightness, Study & Office.</li>
+            </ul>
+        </div>
+        <div class="info-image">
+            <img src="https://images.unsplash.com/photo-1595867389803-a2614b7e5628?q=80&w=1000&auto=format&fit=crop" alt="Color Temperature Scale">
+        </div>
+    </div>
+</section>
+<div class="footer-container">
     
     <div class="footer-top">
       <!-- About Store Section -->
       <div class="footer-about">
-        <img src="assets/logo.png" class="footer-logo" alt="Logo">
+        <img src="assets/logofooter.png" class="footer-logo" alt="Logo">
         <p>
           We offer high-quality, energy-efficient lighting solutions for homes, offices, shops, and industries. 
           Combining style, durability, and modern design, our lights brighten every space beautifully.
         </p>
         
-          <div class="social-icons">
+        <div class="social-icons">
           <a href="https://www.facebook.com/profile.php?id=61581704102972" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/dola.lights/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
           <a href="" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -196,6 +194,7 @@
       <div class="footer-section contact">
         <h3>Contact Us</h3>
         <p><i class="fa-solid fa-phone"></i> <a href="tel:+916207785047">+91 620 778 5047</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@dolalight.com">info@dolalight.com</a></p>
         <p><i class="fa-solid fa-location-dot"></i>
           <a href="https://goo.gl/maps/YOURLOCATION" target="_blank">
             C-1277, Sushant Lok-1,<br>
@@ -203,7 +202,6 @@
             Haryana, India
           </a>
         </p>
-        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@dolalight.com">info@dolalight.com</a></p>
       </div>
     </div>
 
@@ -223,8 +221,6 @@
     &copy; 2025 Dolalight.com | All Rights Reserved
   </div>
 </footer>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
