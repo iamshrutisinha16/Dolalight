@@ -56,7 +56,7 @@ nav {
     border-radius: 30px;
     border: 1px solid rgba(255,255,255,0.3);
     transition: 0.3s ease;
-    width: 260px;
+    width: 235px;
 }
 
 .search-box:hover {
@@ -187,8 +187,8 @@ ul li .dropdown-menu li a:hover {
 
 .slide img {
     width: 100%;
-    height: auto; /* make it responsive */
-    aspect-ratio: 16/9; /* maintain ratio */
+    height: auto; 
+    aspect-ratio: 16/9; 
     display: block;
     object-fit: cover;
 }
@@ -232,38 +232,85 @@ ul li .dropdown-menu li a:hover {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
-/* ----------------- Responsive ----------------- */
+/* ----------------- Responsive Mobile Fix ----------------- */
+/* ===================== MOBILE (MAX-WIDTH: 900PX) ===================== */
 @media (max-width: 900px) {
 
     header {
-        padding: 0 20px;
-        justify-content: space-between;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .search-box {
+        padding: 0 15px;
+        height: 90px;
         display: flex;
-        flex: 1; /* take remaining space */
-        margin: 0 10px;
-        align-items: center; /* vertical alignment */
-    }
-
-    nav ul {
+        align-items: center;
+        justify-content: space-between;
         position: fixed;
         top: 0;
+        left: 0;
+        width: 100%;
+        background: #000;
+        z-index: 1005;
+    }
+
+    /* LOGO */
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* SEARCH BOX */
+    .search-box {
+        width: 160px;
+        padding: 6px 10px;
+        margin-left: 10px;
+        margin-right: auto;
+    }
+
+    /* CART ICON – FIXED PERFECT */
+    .cart-btn {
+        position: fixed;
+        top: 28px;
+        right: 60px;
+        z-index: 1006;
+        background: transparent;
+    }
+
+    .cart-btn i {
+        font-size: 24px;
+        color: #ffcc00;
+    }
+
+    .cart-btn span {
+        display: none;
+    }
+
+    /* MENU ICON */
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 28px;
+        right: 15px;
+        font-size: 30px;
+        color: #fff;
+        z-index: 1006;
+    }
+
+    /* NAV MENU */
+    nav ul {
+        position: fixed;
+        top: 90px;
         left: -100%;
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 90px);
         background: #000;
+
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+
+        overflow-y: auto;
+        padding-top: 25px;
+        padding-bottom: 180px;
+
         transition: left 0.4s ease-in-out;
-        z-index: 999;
+        z-index: 1000;
     }
 
     nav ul.show {
@@ -271,59 +318,71 @@ ul li .dropdown-menu li a:hover {
     }
 
     nav ul li {
-        margin: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid #1a1a1a;
+        text-align: center;
     }
 
     nav ul li a {
-        font-size: 20px;
+        display: block;
+        padding: 15px 0;
+        font-size: 18px;
+        color: #fff;
     }
 
-    .account-btn, .cart-btn {
-        display: inline-block; /* show on mobile menu */
-        margin-top: 10px;
-        position: relative;
-        right: 0;
-        top: 0;
-    }
-
-    ul li.dropdown:hover .dropdown-menu {
-        position: static;
-        background: #222;
-        text-align: center;
+    /* DROPDOWN FIX — NO CUTTING */
+    .dropdown-menu {
+        display: none;
         width: 100%;
-        box-shadow: none;
+        background: #111;
+        flex-direction: column;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: flex;
+    }
+
+    .dropdown-menu li a {
+        padding: 12px 0;
+        font-size: 16px;
+        color: #ccc;
+        border-bottom: 1px solid #222;
     }
 }
 
-/* Smaller mobiles */
+
+/* ===================== SMALL MOBILES (MAX-WIDTH: 480PX) ===================== */
 @media (max-width: 480px) {
-    .slide img {
-        aspect-ratio: auto;
-        width: 100%;
-        height: auto; /* auto height for small mobiles */
-    }
 
     .logo img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 
+    .search-box {
+        width: 145px;
+        padding: 5px 10px;
+    }
+
+    /* CART FIX (Yeh sabse important) */
     .cart-btn {
-        display: inline-block;
-        position: absolute;
-        right: 60px;
-        top: 25px; /* adjust from top */
-    }
-     .search-box {
-        width: 72%; /* reduce width */
-        flex: none; /* stop flex from stretching */
-        margin-right: 32px; /* adjust spacing from menu icon */
+        top: 30px;
+        right: 50px;  /* ⭐ correct position */
     }
 
+    .cart-btn i {
+        font-size: 20px;
+    }
+
+    /* MENU ICON */
     .menu-icon {
-        position: absolute;
-        right: 20px;
-        top: 25px;
+        top: 28px;
+        right: 15px;
+        font-size: 26px;
+    }
+
+    nav ul {
+        padding-top: 20px;
     }
 }
 
@@ -2287,7 +2346,6 @@ font-size: 0.9rem;
   gap: 30px;
 }
 
-/* Cards */
 .app-card {
   background: #fff;
   padding: 22px 16px;
@@ -2305,7 +2363,6 @@ font-size: 0.9rem;
   box-shadow: 0 12px 28px rgba(0,0,0,0.14);
 }
 
-/* FADE-UP ANIMATION */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
@@ -2377,7 +2434,6 @@ font-size: 0.9rem;
   transform: translateY(0);
 }
 
-/* Stagger animation for model cards: top row & bottom row */
 .model-card:nth-child(1) { transition-delay: 0.1s; }
 .model-card:nth-child(2) { transition-delay: 0.2s; }
 .model-card:nth-child(3) { transition-delay: 0.3s; }
@@ -2724,23 +2780,22 @@ font-size: 0.9rem;
 }
 
 .shop-by .section-title {
-    font-size: 45px;            /* slightly smaller for a softer appearance */
-    font-weight: 600;           /* lighter than bold */
-    color: #333;                /* softer dark color */
-    margin-top: 40px;           /* gentle gap from top */
-    margin-bottom: 25px;        /* spacing below the title */
-    text-transform: capitalize; /* softer text style instead of uppercase */
-    letter-spacing: 0.5px;      /* subtle spacing for readability */
+    font-size: 45px;            
+    font-weight: 600;           
+    color: #333;               
+    margin-top: 40px;           
+    margin-bottom: 25px;        
+    text-transform: capitalize; 
+    letter-spacing: 0.5px;      
     position: relative;
     display: inline-block;
 }
 
-/* Optional: update underline style to match softer look */
 .shop-by .section-title::after {
-    width: 50px;               /* slightly smaller underline */
-    height: 3px;               /* thinner line */
-    background: #ffcc00;       /* same color */
-    margin: 6px auto 0;        /* adjust spacing below text */
+    width: 50px;               
+    height: 3px;               
+    background: #ffcc00;    
+    margin: 6px auto 0;        
     border-radius: 2px;
     display: block;
     content: '';
@@ -2775,7 +2830,7 @@ font-size: 0.9rem;
     cursor: pointer;
     position: relative;
     padding: 0;
-    height: auto; /* Let the height adjust dynamically */
+    height: auto; 
     display: flex;
     flex-direction: column;
 }
@@ -4850,24 +4905,29 @@ font-size: 0.9rem;
 
     .banner-btn {
         padding: 10px 25px;
-        font-size: 13px;
+        font-size: 10px;
         margin-top: 5px;
     }
 }
 
 @media (max-width: 480px) {
     .collection-banner {
-        height: 240px; 
+        height: 200px; 
     }
 
     .banner-content h1 {
-        font-size: 22px;
+        font-size: 20px;
         line-height: 1.2;
     }
     
     .banner-content p {
-        font-size: 13px;
+        font-size: 12px;
         margin-bottom: 15px;
+    }
+    .banner-btn {
+        padding: 10px 25px;
+        font-size: 5px;
+        margin-top: 5px;
     }
 }
 
