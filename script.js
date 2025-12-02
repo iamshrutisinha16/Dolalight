@@ -508,7 +508,7 @@ function renderBulbs(items) {
                     <span class="tech-specs">Color: ${bulb.color} | Base: ${bulb.base}</span>
                     <div class="price-row">
                         <span class="price">${bulb.price}</span>
-                        <div class="add-cart-icon"><i class="fa-solid fa-cart-plus"></i></div>
+                        <div class="add-cart-icon">Add to cart</i></div>
                     </div>
                 </div>
             </div>
@@ -540,3 +540,255 @@ function scrollToGrid() {
 document.addEventListener('DOMContentLoaded', () => {
     renderBulbs(bulbData);
 });
+
+// ================= CEILING LIGHTS DATA =================
+const ceilingProducts = [
+    // --- PANELS (Recessed) ---
+    {
+        id: "c1",
+        name: "15W Slim Panel Light",
+        category: "panel",
+        image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?q=80&w=500", // Generic lighting img
+        watts: ["8W", "15W", "22W"],
+        shapes: ["circle", "square"],
+        price: 450,
+        mrp: 850,
+        cutout: "100mm",
+        warranty: "2 Years"
+    },
+    {
+        id: "c2",
+        name: "Adjustable Panel (Rimless)",
+        category: "panel",
+        image: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=500",
+        watts: ["12W", "20W"],
+        shapes: ["circle"],
+        price: 599,
+        mrp: 1200,
+        cutout: "Adjustable",
+        warranty: "2 Years"
+    },
+
+    // --- COB (Spotlights) ---
+    {
+        id: "c3",
+        name: "7W COB Spotlight (Tiltable)",
+        category: "cob",
+        image: "https://plus.unsplash.com/premium_photo-1678297270385-ad50621b6d58?q=80&w=500",
+        watts: ["7W", "12W"],
+        shapes: ["circle"],
+        price: 850,
+        mrp: 1500,
+        cutout: "75mm",
+        warranty: "3 Years"
+    },
+    {
+        id: "c4",
+        name: "Deep Series Anti-Glare COB",
+        category: "cob",
+        image: "https://images.unsplash.com/photo-1513506003013-08061e80816b?q=80&w=500",
+        watts: ["15W"],
+        shapes: ["circle", "square"],
+        price: 1200,
+        mrp: 2200,
+        cutout: "90mm",
+        warranty: "5 Years"
+    },
+
+    // --- SURFACE (Cylinders) ---
+    {
+        id: "c5",
+        name: "Black Cylinder Surface Light",
+        category: "surface",
+        image: "https://images.unsplash.com/photo-1540932296774-7097c27d42df?q=80&w=500",
+        watts: ["10W", "20W"],
+        shapes: ["circle"],
+        price: 990,
+        mrp: 1800,
+        cutout: "Surface Mount",
+        warranty: "2 Years"
+    },
+    
+    // --- PROFILE (Linear) ---
+    {
+        id: "c6",
+        name: "2M Magnetic Track Light",
+        category: "profile",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=500",
+        watts: ["24W"],
+        shapes: ["square"],
+        price: 2500,
+        mrp: 4500,
+        cutout: "Track System",
+        warranty: "3 Years"
+    }
+];
+
+// ================= RENDER LOGIC =================
+function renderCeilingLights(data) {
+    const grid = document.getElementById('ceilingGrid');
+    grid.innerHTML = ""; // Clear existing
+
+    data.forEach(item => {
+        // Wattage Options
+        let wattOps = item.watts.map(w => `<option>${w}</option>`).join('');
+        
+        // Shape Icons Logic
+        let shapeHTML = '';
+        if(item.shapes.includes('circle')) shapeHTML += '<i class="fa-solid fa-circle selected"></i>';
+        if(item.shapes.includes('square')) shapeHTML += '<i class="fa-solid fa-square"></i>';
+
+        const card = `
+            <div class="ceiling-card fade-in-up">
+                <span class="warranty-badge"><i class="fa-solid fa-shield"></i> ${item.warranty}</span>
+                <div class="img-box">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="card-body">
+                    <span class="c-cat">${item.category} Series</span>
+                    <h3 class="c-title">${item.name}</h3>
+                    
+                    <div class="config-row">
+                        <div class="config-group">
+                            <label>Wattage</label>
+                            <select class="watt-select">${wattOps}</select>
+                        </div>
+                        <div class="config-group">
+                            <label>Shape</label>
+                            <div class="shape-icons">
+                                ${shapeHTML}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-foot">
+                        <div class="price">
+                            <h4>₹${item.price}</h4>
+                            <small>₹${item.mrp}</small>
+                        </div>
+                        <button class="add-btn" onclick="addToCartCeiling('${item.name}')">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        grid.innerHTML += card;
+    });
+}
+
+// Product Data Array
+        const products = [
+            {
+                id: 1,
+                name: "Royal Crystal Chandelier",
+                category: "Luxury",
+                price: 15999,
+                image: "https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 2,
+                name: "Nordic Minimalist Pendant",
+                category: "Modern",
+                price: 4500,
+                image: "https://images.unsplash.com/photo-1565814329-27bf6468a129?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 3,
+                name: "Industrial Cage Lamp",
+                category: "Vintage",
+                price: 2800,
+                image: "https://images.unsplash.com/photo-1540932296774-74d421319242?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 4,
+                name: "Golden Sphere Flush",
+                category: "Premium",
+                price: 8900,
+                image: "https://images.unsplash.com/photo-1550920427-4638d27a4253?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 5,
+                name: "Geometric LED Light",
+                category: "Tech",
+                price: 6500,
+                image: "https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 6,
+                name: "Boho Rattan Weave",
+                category: "Artistic",
+                price: 3200,
+                image: "https://plus.unsplash.com/premium_photo-1670359036329-873d6eb65553?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 7,
+                name: "Matte Black Cluster",
+                category: "Modern",
+                price: 5600,
+                image: "https://images.unsplash.com/photo-1540932296774-74d421319242?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 8,
+                name: "Glass Globe Duo",
+                category: "Luxury",
+                price: 9200,
+                image: "https://images.unsplash.com/photo-1513506003013-194a5d68d8ed?q=80&w=600&auto=format&fit=crop"
+            }
+        ];
+
+        let cartItemCount = 0;
+
+        // Render Products
+        const productContainer = document.getElementById('product-list');
+
+        function initProducts() {
+            let output = '';
+            products.forEach(prod => {
+                output += `
+                    <div class="product-card">
+                        <div class="p-image">
+                            <img src="${prod.image}" alt="${prod.name}">
+                            <!-- Floating Button on Image -->
+                            <button class="overlay-btn" onclick="addToCart('${prod.name}')">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
+                        <div class="p-details">
+                            <div>
+                                <div class="p-cat">${prod.category}</div>
+                                <h3 class="p-title">${prod.name}</h3>
+                                <div class="p-price">₹${prod.price.toLocaleString()}</div>
+                            </div>
+                            <!-- Full Width Button Below -->
+                            <button class="full-add-btn" onclick="addToCart('${prod.name}')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            productContainer.innerHTML = output;
+        }
+
+        // Add to Cart Logic
+        function addToCart(name) {
+            // Update Count
+            cartItemCount++;
+            document.getElementById('cart-count').innerText = cartItemCount;
+
+            // Show Toast
+            const toast = document.getElementById('toast');
+            const toastText = toast.querySelector('p');
+            toastText.innerText = `${name} added successfully!`;
+            
+            toast.classList.add('active');
+
+            // Hide Toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 3000);
+        }
+
+        // Initialize
+        initProducts();

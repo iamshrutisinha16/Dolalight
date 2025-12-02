@@ -13,12 +13,12 @@
             <img src="assets/logo.png" />
         </div>
         <nav id="navbar">
-           <div class="search-box">
+            <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search products...">
     <span class="search-icon" onclick="searchMyWebsite()">
         <i class="fa-solid fa-magnifying-glass"></i>
     </span>
-         </div>
+       </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
 
@@ -27,11 +27,10 @@
                 <li class="dropdown">
                     <a>Product <i class="fa-solid fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
-                         <li><a href="shop-by-dola.html">Shop by dola</a></li>
                         <li><a href="shop-by-product.html">Shop by Product</a></li>
                         <li><a href="shop-by-room.html">Shop by Room</a></li>
                         <li><a href="shop-by-collection.html">Shop by Collection</a></li>
-                        
+                          <li><a href="shop-by-dola.html">Shop by dola</a></li>
                         <li><a href="shop-by-style.html">Shop by style</a></li>
                     </ul>
                 </li>
@@ -64,139 +63,131 @@
                  <span>Cart</span> 
                   </a>
                  </li>
-
                 <li>
-                    <a href="login.html" class="account-btn">
-                        <i class="fa-regular fa-id-badge"></i> Account
-                    </a>
+                 <a href="login.html" class="account-btn">
+                   <i class="fa-regular fa-id-badge"></i> Account
+                </a>
                 </li>
             </ul>
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
         </nav>
     </header>
-  
-   <section class="shop-banner-section">
-  <div class="banner">
-    <img src="assets/Roombanner.jpg" alt="Shop By Room Type">
-    <div class="banner-text">
-      <h1>Shop By Room </h1>
-      <p>Elegant lighting solutions for every corner of your home</p>
-       <a href="#products" class="banner-btn">Explore Now</a>
+      <!-- 1. Hero Banner -->
+    <header class="hero">
+        <h1>Illiminate Your World</h1>
+        <p>Discover the finest collection of luxury ceiling lights, chandeliers, and modern pendants designed to transform your space.</p>
+        <a href="#shop" class="hero-btn">Explore Collection</a>
+    </header>
+
+    <!-- 2. Features Section (Banner ke niche) -->
+    <section class="features-row">
+        <div class="feature-box">
+            <i class="fa-solid fa-medal"></i>
+            <h4>Premium Quality</h4>
+            <p>Certified materials with 5-year warranty.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h4>Free Shipping</h4>
+            <p>Express delivery on all prepaid orders.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fa-solid fa-headset"></i>
+            <h4>24/7 Support</h4>
+            <p>Expert installation guidance available.</p>
+        </div>
+    </section>
+
+    <!-- 3. Categories Section -->
+    <section class="section-padding">
+        <div class="section-header">
+            <h2>Shop by Category</h2>
+            <p>Choose the perfect style for your room</p>
+        </div>
+        <div class="categories-grid">
+            <div class="cat-card">
+                <div class="cat-img"><img src="https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?q=80&w=400&auto=format&fit=crop" alt="Chandelier"></div>
+                <h3>Chandeliers</h3>
+            </div>
+            <div class="cat-card">
+                <div class="cat-img"><img src="https://images.unsplash.com/photo-1513506003013-194a5d68d8ed?q=80&w=400&auto=format&fit=crop" alt="Pendants"></div>
+                <h3>Pendants</h3>
+            </div>
+            <div class="cat-card">
+                <div class="cat-img"><img src="https://images.unsplash.com/photo-1565814329-27bf6468a129?q=80&w=400&auto=format&fit=crop" alt="Flush Mount"></div>
+                <h3>Flush Mount</h3>
+            </div>
+            <div class="cat-card">
+                <div class="cat-img"><img src="https://plus.unsplash.com/premium_photo-1670359036329-873d6eb65553?q=80&w=400&auto=format&fit=crop" alt="Vintage"></div>
+                <h3>Vintage</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Main Product Grid (Add to Cart Logic Here) -->
+    <section id="shop" class="section-padding" style="background: #fff;">
+        <div class="section-header">
+            <h2>Exclusive Collection</h2>
+            <p>Handpicked lighting fixtures for modern homes</p>
+        </div>
+        
+        <div class="product-container" id="product-list">
+            <!-- JS will render products here -->
+        </div>
+    </section>
+
+    <!-- 5. Technical Details (Extra Section) -->
+    <section class="specs-section">
+        <div class="specs-image">
+            <img src="https://images.unsplash.com/photo-1550920427-4638d27a4253?q=80&w=800&auto=format&fit=crop" alt="Tech Specs">
+        </div>
+        <div class="specs-content">
+            <div class="section-header" style="text-align: left; margin-bottom: 20px;">
+                <h2>Technical Specifications</h2>
+                <p>Understanding the quality behind our Aurora Series.</p>
+            </div>
+            <table class="spec-table">
+                <tr>
+                    <td>Material</td>
+                    <td>K9 Crystals, Stainless Steel, Gold Plating</td>
+                </tr>
+                <tr>
+                    <td>Light Source</td>
+                    <td>E14 LED Bulbs (Dimmable Supported)</td>
+                </tr>
+                <tr>
+                    <td>Voltage</td>
+                    <td>110V - 240V (Universal Standard)</td>
+                </tr>
+                <tr>
+                    <td>Dimensions</td>
+                    <td>60cm (W) x 85cm (H)</td>
+                </tr>
+                <tr>
+                    <td>Warranty</td>
+                    <td>3 Years on Finish, 1 Year on Electricals</td>
+                </tr>
+            </table>
+            <br>
+            <button class="hero-btn" style="padding: 10px 30px; font-size: 0.9rem;">Download Brochure</button>
+        </div>
+    </section>
+
+    <!-- Floating Cart Icon -->
+    <div class="floating-cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="cart-count" id="cart-count">0</div>
     </div>
-</div>
 
-   <!-- Room Categories Section -->
-<section class="room-categories fade-section">
-    <h2 class="section-title">Shop By Room</h2>
-    <div class="room-grid">
-        <div class="room-card fade-box">
-            <img src="assets/Livingroom.jpg" alt="Living Room">
-            <div class="room-overlay">
-                <h3>Living Room</h3>
-                <p>Ceiling lights, chandeliers & wall lamps</p>
-            </div>
-        </div>
-        <div class="room-card fade-box">
-            <img src="assets/Bedroom.jpg" alt="Bedroom">
-            <div class="room-overlay">
-                <h3>Bedroom</h3>
-                <p>Bedside lamps & ambient lighting</p>
-            </div>
-        </div>
-        <div class="room-card fade-box">
-            <img src="assets/kitchen.jpg" alt="Kitchen">
-            <div class="room-overlay">
-                <h3>Kitchen</h3>
-                <p>LED panels & track lights</p>
-            </div>
-        </div>
-        <div class="room-card fade-box">
-            <img src="assets/DiningRoom.jpg" alt="Dining Room">
-            <div class="room-overlay">
-                <h3>Dining Room</h3>
-                <p>Pendant lights & chandeliers</p>
-            </div>
-        </div>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check" style="color: green; font-size: 1.5rem;"></i>
+        <div>
+            <h4 style="margin-bottom: 2px;">Success</h4>
+            <p style="font-size: 0.9rem; margin:0;">Item added to cart!</p>
         </div>
     </div>
-</section>
-
-<!-- Featured Products Section -->
-<section class="featured-products fade-section">
-    <h2 class="section-title">Featured Lights</h2>
-    <div class="product-grid">
-        <div class="product-card fade-box">
-            <img src="assets/CrystalChandelier.jpg" alt="Chandelier">
-            <div class="product-info">
-                <h4>Crystal Chandelier</h4>
-                <p>$199</p>
-            </div>
-        </div>
-        <div class="product-card fade-box">
-            <img src="assets/ModernBedsideLamp.jpg" alt="Bedside Lamp">
-            <div class="product-info">
-                <h4>Modern Bedside Lamp</h4>
-                <p>$49</p>
-            </div>
-        </div>
-        <div class="product-card fade-box">
-            <img src="assets/LEDCeilingLight.jpg" alt="LED Panel">
-            <div class="product-info">
-                <h4>LED Panel Light</h4>
-                <p>$79</p>
-            </div>
-        </div>
-        <div class="product-card fade-box">
-            <img src="assets/GoldPendantLight.jpg" alt="Pendant Light">
-            <div class="product-info">
-                <h4>Gold Pendant Light</h4>
-                <p>$129</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Lighting Tips Section -->
-<section class="lighting-tips fade-section">
-    <h2 class="section-title">Lighting Tips</h2>
-    <div class="tips-grid">
-        <div class="tip-card fade-box">
-            <i class="fa-solid fa-lightbulb"></i>
-            <h4>Choose the Right Brightness</h4>
-            <p>Use the correct lumen for each room to balance comfort & utility.</p>
-        </div>
-        <div class="tip-card fade-box">
-            <i class="fa-solid fa-swatchbook"></i>
-            <h4>Match Your Style</h4>
-            <p>Pick lighting finishes and colors that complement your interiors.</p>
-        </div>
-        <div class="tip-card fade-box">
-            <i class="fa-solid fa-seedling"></i>
-            <h4>Energy Efficient</h4>
-            <p>LED & eco-friendly lights save energy and last longer.</p>
-        </div>
-        <div class="tip-card fade-box">
-            <i class="fa-solid fa-star"></i>
-            <h4>Layer Lighting</h4>
-            <p>Combine ambient, task, and accent lights for a perfect mood.</p>
-        </div>
-    </div>
-</section>
-  <div class="detail-card">
-  <h2>Brighten Every Corner With Style</h2>
-
-  <p>
-    Transform your home with our curated lighting collection. 
-    From cozy bedrooms and stylish living rooms to functional kitchens 
-    and productive office spaces — our lights combine design, comfort 
-    and energy efficiency. Enhance every room effortlessly with premium 
-    illumination and modern style.
-  </p>
-
-  <button class="detail-btn">Explore Now</button>
-</div>
-</section>
- <footer>
+     <footer>
   <div class="footer-features-strip">
   <div class="footer-container">
     <div class="features-grid">
@@ -237,18 +228,19 @@
     </div>
   </div>
 </div>
+
   <div class="footer-container">
     
     <div class="footer-top">
       <!-- About Store Section -->
       <div class="footer-about">
-        <img src="assets/logo.png" class="footer-logo" alt="Logo">
+        <img src="assets/logofooter.png" class="footer-logo" alt="Logo">
         <p>
           We offer high-quality, energy-efficient lighting solutions for homes, offices, shops, and industries. 
           Combining style, durability, and modern design, our lights brighten every space beautifully.
         </p>
         
-          <div class="social-icons">
+        <div class="social-icons">
           <a href="https://www.facebook.com/profile.php?id=61581704102972" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/dola.lights/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
           <a href="" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -309,7 +301,6 @@
     &copy; 2025 Dolalight.com | All Rights Reserved
   </div>
 </footer>
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
