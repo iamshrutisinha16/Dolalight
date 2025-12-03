@@ -72,126 +72,152 @@
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
         </nav>
     </header>
-      <!-- 1. Hero Banner -->
-    <header class="hero">
-        <h1>Illiminate Your World</h1>
-        <p>Discover the finest collection of luxury ceiling lights, chandeliers, and modern pendants designed to transform your space.</p>
-        <a href="#shop" class="hero-btn">Explore Collection</a>
-    </header>
+    
+<div class="lux-container">
 
-    <!-- 3. Categories Section -->
-    <section class="section-padding">
-        <div class="section-header">
-            <h2>Shop by Category</h2>
-            <p>Choose the perfect style for your room</p>
-        </div>
-        <div class="categories-grid">
-            <div class="cat-card">
-                <div class="cat-img"><img src="assets/Chandeliersbrand.jpg" alt="Chandelier"></div>
-                <h3>Chandeliers</h3>
-            </div>
-            <div class="cat-card">
-                <div class="cat-img"><img src="assets/Pendants.jpg" alt="Pendants"></div>
-                <h3>Pendants</h3>
-            </div>
-            <div class="cat-card">
-                <div class="cat-img"><img src="assets/FlushMount.jpg" alt="Flush Mount"></div>
-                <h3>Flush Mount</h3>
-            </div>
-            <div class="cat-card">
-                <div class="cat-img"><img src="assets/vintage.jpg" alt="Vintage"></div>
-                <h3>Vintage</h3>
-            </div>
+    <!-- HERO BANNER -->
+    <section class="lux-banner">
+        <div class="lux-banner-content">
+            <h1>Sculpting Light <br> Defining Spaces.</h1>
+            <p>Experience the perfect blend of contemporary aesthetics and functional brilliance with our handcrafted wall lighting collection.</p>
+            <button class="lux-cta-btn" onclick="document.getElementById('lux-shop').scrollIntoView({behavior: 'smooth'})">Explore Collection</button>
         </div>
     </section>
 
-    <!-- 4. Main Product Grid (Add to Cart Logic Here) -->
-    <section id="shop" class="section-padding" style="background: #fff;">
-        <div class="section-header">
-            <h2>Exclusive Collection</h2>
-            <p>Handpicked lighting fixtures for modern homes</p>
+    <!-- PRODUCT SECTION -->
+    <section class="lux-products-wrapper" id="lux-shop">
+
+        <!-- PRODUCT 1: Left Image, Right Text -->
+        <div class="lux-product-row">
+            <div class="lux-img-col">
+                <div class="lux-tag">Best Seller</div>
+                <img src="https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?q=80&w=1000&auto=format&fit=crop" alt="Helix Wall Light">
+            </div>
+            
+            <div class="lux-details-col">
+                <div class="lux-rating">
+                    ★★★★★ <span class="lux-review-count">(128 Reviews)</span>
+                </div>
+                <h2 class="lux-title">The Aurum Helix</h2>
+                <div class="lux-price-area">
+                    <span class="lux-price">₹3,499</span>
+                    <span class="lux-mrp">₹6,999</span>
+                    <span class="lux-discount">50% OFF</span>
+                </div>
+                <p class="lux-desc">
+                    Inspired by the golden ratio, the Aurum Helix brings a warm, sophisticated glow to any hallway or bedroom. The brushed gold finish reflects luxury, while the frosted glass diffuser ensures glare-free illumination.
+                </p>
+
+                <table class="lux-specs-table">
+                    <tr><td class="lux-spec-label">Material</td><td>Brass & Frosted Glass</td></tr>
+                    <tr><td class="lux-spec-label">Dimensions</td><td>12" H x 5" W x 4" D</td></tr>
+                    <tr><td class="lux-spec-label">Light Source</td><td>E27 LED (Included)</td></tr>
+                    <tr><td class="lux-spec-label">Warranty</td><td>2 Years Manufacturer</td></tr>
+                </table>
+
+                <div class="lux-options">
+                    <span class="lux-label">Select Finish:</span>
+                    <div class="lux-color-picker">
+                        <div class="lux-color-circle selected" style="background: #d4a373;" onclick="selectColor(this)"></div> <!-- Gold -->
+                        <div class="lux-color-circle" style="background: #2f3e46;" onclick="selectColor(this)"></div> <!-- Matte Black -->
+                        <div class="lux-color-circle" style="background: #e0e0e0;" onclick="selectColor(this)"></div> <!-- Chrome -->
+                    </div>
+                </div>
+
+                <div class="lux-actions">
+                    <button class="lux-btn-cart" onclick="luxAddToCart('Aurum Helix')">
+                        ADD TO CART
+                    </button>
+                    <button class="lux-btn-wishlist">♡ SAVE</button>
+                </div>
+
+                <div class="lux-features">
+                    <div class="lux-feature-item">
+                        <span class="lux-feature-icon">🚚</span>
+                        Free Shipping
+                    </div>
+                    <div class="lux-feature-item">
+                        <span class="lux-feature-icon">🛡️</span>
+                        Secure Payment
+                    </div>
+                    <div class="lux-feature-item">
+                        <span class="lux-feature-icon">↩️</span>
+                        7 Days Return
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="product-container" id="product-list">
-            <!-- JS will render products here -->
+
+        <!-- PRODUCT 2: Right Image, Left Text (Zig Zag) -->
+        <div class="lux-product-row reverse">
+            <div class="lux-img-col">
+                <div class="lux-tag">New Arrival</div>
+                <img src="https://images.unsplash.com/photo-1543198126-18a01c4a199c?q=80&w=1000&auto=format&fit=crop" alt="Midnight Sconce">
+            </div>
+            
+            <div class="lux-details-col">
+                <div class="lux-rating">
+                    ★★★★☆ <span class="lux-review-count">(45 Reviews)</span>
+                </div>
+                <h2 class="lux-title">Midnight Cylinder Sconce</h2>
+                <div class="lux-price-area">
+                    <span class="lux-price">₹2,850</span>
+                    <span class="lux-mrp">₹4,500</span>
+                    <span class="lux-discount">36% OFF</span>
+                </div>
+                <p class="lux-desc">
+                    Minimalism meets industrial design. The Midnight Cylinder is perfect for creating focused lighting effects. Its matte black body creates a striking contrast against light walls, making it a piece of art even when switched off.
+                </p>
+
+                <table class="lux-specs-table">
+                    <tr><td class="lux-spec-label">Material</td><td>Powder Coated Aluminium</td></tr>
+                    <tr><td class="lux-spec-label">Dimensions</td><td>8" H x 4" W</td></tr>
+                    <tr><td class="lux-spec-label">Beam Angle</td><td>Adjustable (Up/Down)</td></tr>
+                    <tr><td class="lux-spec-label">Box Content</td><td>Lamp, Mount Kit, Manual</td></tr>
+                </table>
+
+                <div class="lux-options">
+                    <span class="lux-label">Select Color Temp:</span>
+                    <div class="lux-color-picker">
+                        <div class="lux-color-circle selected" style="background: #ffcc33;" onclick="selectColor(this)" title="Warm White"></div> 
+                        <div class="lux-color-circle" style="background: #ffffff; border: 1px solid #ddd;" onclick="selectColor(this)" title="Cool Daylight"></div> 
+                    </div>
+                </div>
+
+                <div class="lux-actions">
+                    <button class="lux-btn-cart" onclick="luxAddToCart('Midnight Sconce')">
+                        ADD TO CART
+                    </button>
+                    <button class="lux-btn-wishlist">♡ SAVE</button>
+                </div>
+                
+                <div class="lux-features">
+                    <div class="lux-feature-item">
+                        <span class="lux-feature-icon">⚡</span>
+                        Energy Saving
+                    </div>
+                    <div class="lux-feature-item">
+                        <span class="lux-feature-icon">🔧</span>
+                        Easy Install
+                    </div>
+                </div>
+            </div>
         </div>
+
     </section>
-    <!-- ================= FEATURES STRIP ================= -->
-<section class="features-strip">
-    <div class="feature-box">
-        <i class="fa-solid fa-bolt"></i>
-        <h3>Energy Efficient</h3>
-        <p>Saves 85% Electricity</p>
-    </div>
-    <div class="feature-box">
-        <i class="fa-solid fa-eye"></i>
-        <h3>Eye Comfort</h3>
-        <p>Flicker Free Technology</p>
-    </div>
-    <div class="feature-box">
-        <i class="fa-solid fa-hourglass-half"></i>
-        <h3>Long Life</h3>
-        <p>25,000+ Burning Hours</p>
-    </div>
-    <div class="feature-box">
-        <i class="fa-solid fa-shield-halved"></i>
-        <h3>2 Year Warranty</h3>
-        <p>On all technical faults</p>
-    </div>
-</section>
 
-  <section class="tech-specs reveal">
-    <div class="tech-image">
-        <img src="assets/technicalimage.avif" alt="Technical Specs">
-        <div class="tech-overlay"></div>
-    </div>
-
-    <div class="tech-content">
-        <h2 class="tech-title">Technical Specifications</h2>
-        <p class="tech-sub">Premium engineering behind the Aurora Series.</p>
-
-        <div class="spec-grid">
-            <div class="spec-item fade-up">
-                <h4>Material</h4>
-                <p>K9 Crystal • Stainless Steel • Gold Plating</p>
-            </div>
-            <div class="spec-item fade-up">
-                <h4>Light Source</h4>
-                <p>E14 LED Bulbs (Dimmable Supported)</p>
-            </div>
-            <div class="spec-item fade-up">
-                <h4>Voltage</h4>
-                <p>110V – 240V (Universal Standard)</p>
-            </div>
-            <div class="spec-item fade-up">
-                <h4>Dimensions</h4>
-                <p>60cm (W) × 85cm (H)</p>
-            </div>
-            <div class="spec-item fade-up">
-                <h4>Warranty</h4>
-                <p>3 Years on Finish • 1 Year on Electricals</p>
-            </div>
-        </div>
-
-        <button class="gold-btn fade-up">Download Brochure</button>
-    </div>
-</section>
-
-    <!-- Floating Cart Icon -->
-    <div class="floating-cart">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <div class="cart-count" id="cart-count">0</div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <i class="fa-solid fa-circle-check" style="color: green; font-size: 1.5rem;"></i>
+    <!-- Custom Notification Toast -->
+    <div id="lux-toast-box" class="lux-toast">
+        <span style="font-size: 1.5rem; color: var(--lux-success);">✓</span>
         <div>
-            <h4 style="margin-bottom: 2px;">Success</h4>
-            <p style="font-size: 0.9rem; margin:0;">Item added to cart!</p>
+            <h4 style="font-size: 0.9rem; margin-bottom: 2px;">Success</h4>
+            <p id="lux-toast-msg" style="font-size: 0.8rem; color: #666;">Item added to cart</p>
         </div>
     </div>
-     <footer>
+
+</div>
+
+    <footer>
   <div class="footer-features-strip">
   <div class="footer-container">
     <div class="features-grid">

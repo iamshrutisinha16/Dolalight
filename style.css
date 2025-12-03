@@ -46,6 +46,7 @@ nav {
     flex: 1;
     justify-content: flex-end;
     gap: 20px;
+      z-index: 1 !important;
 }
 
 .search-box {
@@ -154,6 +155,7 @@ ul li .dropdown-menu {
 
 ul li.dropdown:hover .dropdown-menu {
     display: block;
+      z-index: 1 !important;
 }
 
 ul li .dropdown-menu li a {
@@ -161,6 +163,7 @@ ul li .dropdown-menu li a {
     padding: 10px 20px;
     font-size: 14px;
     color: #ccc;
+      z-index: 1 !important;
 }
 
 ul li .dropdown-menu li a:hover {
@@ -6026,18 +6029,13 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
-  
-  /* Upar se Margin (Gap) add kiya */
   margin-top: 60px !important; 
-
-  /* Niche wala gap bilkul kam rakha hai */
   margin-bottom: 5px !important; 
 }
 
 .section-lead {
   font-size: 1.125rem;
   color: #666;
-  /* Percentage (%) hata kar thoda sa pixel margin diya hai */
   margin-top: 5px !important; 
 }
 
@@ -6634,7 +6632,7 @@ body {
 /* ================= BULB HERO ================= */
 .bulb-hero {
     height: 400px;
-    background: linear-gradient(to right, #000000, #1a1a1a), url('https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=2068&auto=format&fit=crop');
+    background: linear-gradient(to right, #000000, #1a1a1a), url('assets/ledbulbbanner.avif');
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
@@ -6695,6 +6693,7 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     flex-wrap: wrap;
     gap: 20px;
+      background-color: #f0f0f0; /* Light Grey background */
 }
 
 .feature-box {
@@ -6811,7 +6810,7 @@ body {
 
 /* Hover Effect: Light Glow */
 .bulb-card:hover .bulb-img-box img {
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.6)); /* Bulb jalne ka effect */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.6)); 
     transform: scale(1.05);
 }
 
@@ -6946,17 +6945,17 @@ body {
     }
 }
 
-/* ---------- THEME ---------- */
-  /* --- 1. GLOBAL STYLES & VARIABLES --- */
+  /* --- Celling lights --- */
         :root {
             --primary: #1a1a1a; /* Dark Black/Grey */
-            --gold: #d4af37;    /* Luxury Gold */
+            --gold: #ffcc00;   /* Luxury Gold */
             --gold-hover: #b5952f;
             --light-bg: #f4f4f4;
             --white: #ffffff;
             --text-grey: #666;
             --transition: all 0.3s ease-in-out;
             --shadow: 0 5px 15px rgba(0,0,0,0.1);
+              background-color: #f0f0f0; /* Light Grey background */
         }
 
         * {
@@ -7012,9 +7011,8 @@ body {
         /* --- 2. HERO BANNER --- */
        .hero {
             height: 75vh;
-            /* Nayi Image Link */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
-                        url('https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?q=80&w=2070&auto=format&fit=crop'); 
+                        url('assets/cellinglights.avif'); 
             
             background-size: cover;
             background-position: center;
@@ -7025,6 +7023,7 @@ body {
             align-items: center;
             text-align: center;
             color: var(--white);
+              z-index: 1 !important;
         }
         .hero h1 {
             font-size: 4rem;
@@ -7060,47 +7059,13 @@ body {
             color: var(--gold);
         }
 
-        /* --- 3. FEATURES SECTION (New) --- */
-        .features-row {
-            display: flex;
-            justify-content: space-between;
-            background: var(--white);
-            box-shadow: var(--shadow);
-            margin: -50px 5% 0; /* Overlap effect */
-            position: relative;
-            z-index: 10;
-            border-radius: 8px;
-            padding: 40px;
-        }
-
-        .feature-box {
-            text-align: center;
-            flex: 1;
-            padding: 0 20px;
-            border-right: 1px solid #eee;
-        }
-
-        .feature-box:last-child {
-            border-right: none;
-        }
-
-        .feature-box i {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        .feature-box h4 {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
         /* --- 4. CATEGORIES SECTION (New) --- */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             text-align: center;
+              background-color: #f0f0f0; /* Light Grey background */
         }
 
         .cat-card {
@@ -7138,6 +7103,7 @@ body {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 40px;
+              background-color: #f0f0f0; /* Light Grey background */
         }
 
         .product-card {
@@ -7248,52 +7214,187 @@ body {
             background: var(--primary);
             color: var(--white);
         }
+ 
+        /* --- MAIN SECTION LAYOUT (Light Theme) --- */
+.tech-specs {
+      background-color: #f0f0f0; /* Light Grey background */
+    color: #333333; /* Dark Grey Text for readability */
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 80vh;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
 
-        /* --- 6. TECHNICAL DETAILS TABLE (Extra Section) --- */
-        .specs-section {
-            background-color: var(--white);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+/* --- LEFT SIDE: IMAGE --- */
+.tech-image {
+    flex: 1;
+    min-width: 350px;
+    position: relative;
+    overflow: hidden;
+}
 
-        .specs-image {
-            flex: 1;
-            min-width: 400px;
-            height: 500px;
-        }
-        
-        .specs-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.tech-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
 
-        .specs-content {
-            flex: 1;
-            padding: 50px;
-            min-width: 400px;
-        }
+/* Light Overlay (Optional: makes text pop if image is light) */
+.tech-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.3)); 
+    pointer-events: none;
+}
 
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+/* Image Zoom on Hover */
+.tech-specs:hover .tech-image img {
+    transform: scale(1.05);
+}
 
-        .spec-table td {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-            color: var(--text-grey);
-            font-family: sans-serif;
-        }
+/* --- RIGHT SIDE: CONTENT --- */
+.tech-content {
+    flex: 1;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 350px;
+    background-color: #ffffff; /* Matches section bg */
+}
 
-        .spec-table td:first-child {
-            font-weight: bold;
-            color: var(--primary);
-            width: 40%;
-        }
+/* Typography */
+.tech-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #D4AF37; /* Premium Gold */
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
 
+.tech-sub {
+    color: #666666; /* Medium Grey */
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    border-left: 3px solid #D4AF37;
+    padding-left: 15px;
+    font-weight: 400;
+}
+
+/* --- SPECIFICATIONS GRID --- */
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.spec-item {
+    border-bottom: 1px solid #e0e0e0; /* Light Grey Divider */
+    padding-bottom: 15px;
+    transition: 0.3s ease;
+}
+
+.spec-item:hover {
+    border-color: #D4AF37; /* Gold Line on Hover */
+    transform: translateX(5px);
+}
+
+.spec-item h4 {
+    color: #D4AF37; /* Gold Heading */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.spec-item p {
+    color: #333333; /* Dark Text */
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* --- BUTTON STYLING (Gold Outline) --- */
+.gold-btn {
+    align-self: flex-start;
+    background: transparent;
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gold-btn:hover {
+    background: #D4AF37;
+    color: #ffffff; /* White text on Gold bg */
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- ANIMATIONS --- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger Delay for smooth entry */
+.spec-item:nth-child(1) { transition-delay: 0.1s; }
+.spec-item:nth-child(2) { transition-delay: 0.2s; }
+.spec-item:nth-child(3) { transition-delay: 0.3s; }
+.spec-item:nth-child(4) { transition-delay: 0.4s; }
+.spec-item:nth-child(5) { transition-delay: 0.5s; }
+
+/* --- RESPONSIVE MOBILE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .tech-specs {
+        flex-direction: column; /* Image Top, Content Bottom */
+        height: auto;
+    }
+
+    .tech-image {
+        min-height: 300px; /* Image visible on mobile */
+        width: 100%;
+        flex: none;
+    }
+    
+    .tech-content {
+        padding: 40px 25px;
+        min-width: 100%;
+        flex: none;
+    }
+
+    .tech-title {
+        font-size: 2rem; /* Slightly smaller heading */
+    }
+
+    .spec-grid {
+        grid-template-columns: 1fr; /* 1 Column Stack */
+        gap: 20px;
+    }
+
+    .gold-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
         /* --- FLOATING CART --- */
         .floating-cart {
             position: fixed;
@@ -7370,3 +7471,367 @@ body {
         @keyframes slideDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* wall lights */
+ 
+        :root {
+            --lux-accent: #c5a47e; /* Luxury Gold */
+            --lux-dark: #1a1a1a;
+            --lux-gray: #f9f9f9;
+            --lux-text: #4a4a4a;
+            --lux-border: #e0e0e0;
+            --lux-success: #27ae60;
+        }
+
+        .lux-container * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lux-container {
+            width: 100%;
+            background-color: #fff;
+            color: var(--lux-text);
+            overflow-x: hidden;
+        }
+
+        /* --- 1. Cinematic Banner --- */
+        .lux-banner {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1513506003013-d53453772663?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-attachment: fixed; /* Parallax effect */
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 10%;
+        }
+
+        .lux-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .lux-banner-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 600px;
+            animation: luxSlideRight 1s ease-out;
+        }
+
+        .lux-banner-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .lux-banner-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .lux-cta-btn {
+            padding: 15px 40px;
+            background-color: var(--lux-accent);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lux-cta-btn:hover {
+            background-color: #b08d65;
+            letter-spacing: 3px;
+        }
+
+        /* --- 2. Product Section Layout --- */
+        .lux-products-wrapper {
+            padding: 80px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Zig Zag Layout: Flexbox */
+        .lux-product-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 100px;
+            gap: 50px;
+            opacity: 0; /* For scroll animation */
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .lux-product-row.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Reverse direction for 2nd item */
+        .lux-product-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Image Side */
+        .lux-img-col {
+            flex: 1;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            height: 550px;
+        }
+
+        .lux-img-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .lux-img-col:hover img {
+            transform: scale(1.05);
+        }
+
+        .lux-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--lux-dark);
+        }
+
+        /* Details Side */
+        .lux-details-col {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .lux-rating {
+            color: #f1c40f;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .lux-review-count {
+            color: #999;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lux-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--lux-dark);
+            margin-bottom: 10px;
+        }
+
+        .lux-price-area {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .lux-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--lux-dark);
+        }
+
+        .lux-mrp {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .lux-discount {
+            color: var(--lux-success);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .lux-desc {
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        /* Specification Table */
+        .lux-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .lux-specs-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--lux-border);
+        }
+
+        .lux-specs-table .lux-spec-label {
+            font-weight: 600;
+            color: var(--lux-dark);
+            width: 40%;
+        }
+
+        /* Interactive Elements */
+        .lux-options {
+            margin-bottom: 30px;
+        }
+
+        .lux-label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .lux-color-picker {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lux-color-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .lux-color-circle.selected {
+            border: 2px solid var(--lux-dark);
+            transform: scale(1.1);
+        }
+
+        .lux-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .lux-btn-cart {
+            flex: 2;
+            padding: 18px;
+            background-color: var(--lux-dark);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lux-btn-cart:hover {
+            background-color: #333;
+        }
+
+        .lux-btn-wishlist {
+            flex: 1;
+            padding: 18px;
+            background-color: transparent;
+            border: 1px solid var(--lux-dark);
+            color: var(--lux-dark);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lux-btn-wishlist:hover {
+            background-color: var(--lux-gray);
+        }
+
+        /* Features Icons */
+        .lux-features {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--lux-border);
+        }
+        
+        .lux-feature-item {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .lux-feature-icon {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        /* Toast Message */
+        .lux-toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #fff;
+            color: var(--lux-dark);
+            padding: 20px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-left: 5px solid var(--lux-accent);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            transform: translateX(200%); /* Hidden */
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .lux-toast.active {
+            transform: translateX(0);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .lux-product-row, .lux-product-row.reverse {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .lux-img-col {
+                width: 100%;
+                height: 400px;
+            }
+
+            .lux-banner h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @keyframes luxSlideRight {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
