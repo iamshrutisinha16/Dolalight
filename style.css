@@ -7835,3 +7835,394 @@ body {
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
         }
+
+/* --- Global Settings --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+    overflow-x: hidden; /* Fix horizontal scroll */
+}
+
+.decor-page-wrapper {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffcf5; /* Cream/White Background */
+    color: #333; /* Dark Grey Text (Not Black) */
+    width: 100%;
+    overflow: hidden;
+}
+
+/* --- Hero Section --- */
+.decor-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 8%;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #fffcf5 0%, #f0e6d2 100%); /* Soft Gradient */
+}
+
+.hero-text {
+    flex: 1;
+    z-index: 2;
+    animation: slideUp 1s ease-out;
+}
+
+.tagline {
+    color: #d4af37; /* Gold Color */
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+    color: #222;
+}
+
+.accent-text {
+    color: #d4af37; /* Gold highlight */
+    font-style: italic;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.primary-btn {
+    padding: 15px 40px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.primary-btn:hover {
+    background-color: #d4af37;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Hero Image & Animation */
+.hero-image-box {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.floating-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px rgba(212, 175, 55, 0.2); /* Offset border effect */
+    animation: float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.circle-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: #d4af37;
+    border-radius: 50%;
+    opacity: 0.1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* --- Product Section --- */
+.decor-collection {
+    padding: 80px 8%;
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.line {
+    width: 60px;
+    height: 4px;
+    background-color: #d4af37;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive Grid */
+    gap: 30px;
+}
+
+/* Product Card */
+.prod-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.prod-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.p-img {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.p-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.prod-card:hover .p-img img {
+    transform: scale(1.1); /* Zoom Effect */
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #d4af37;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+.p-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.p-details h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.category {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.cart-btn {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #222;
+    background: transparent;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-btn:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* --- Animations --- */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card Entry Animation */
+.fade-in {
+    opacity: 0;
+    animation: slideUp 0.8s forwards;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .decor-hero {
+        flex-direction: column-reverse; /* Text neeche, Image upar */
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-image-box {
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text p {
+        margin: 0 auto 30px; /* Center paragraph */
+    }
+    
+    .floating-img {
+        max-width: 100%;
+    }
+}
+
+/* --- Section 3: Shop by Room --- */
+.shop-by-room {
+    padding: 80px 8%;
+    background-color: #f9f9f9; /* Halka grey background */
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.room-card {
+    position: relative;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.room-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.room-card:hover img {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+/* Dark Overlay on Image */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.overlay h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.overlay a {
+    color: #d4af37; /* Gold Color */
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+}
+
+/* Show link on hover */
+.room-card:hover .overlay a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Section 4: Features --- */
+.features-section {
+    padding: 60px 8%;
+    background-color: #222; /* Dark section for contrast */
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-box {
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    color: #d4af37; /* Gold Icon */
+    margin-bottom: 15px;
+}
+
+.feature-box h4 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.feature-box p {
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* --- Responsive Tweak --- */
+@media (max-width: 768px) {
+    .shop-by-room, .features-section {
+        padding: 50px 5%;
+    }
+    
+    .room-card {
+        height: 200px; /* Mobile pe height thodi kam */
+    }
+}

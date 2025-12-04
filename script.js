@@ -450,3 +450,152 @@ function setScene(name) {
 document.querySelectorAll('[data-scene]').forEach(btn => {
     btn.addEventListener('click', () => setScene(btn.getAttribute('data-scene')));
 });
+
+    // Animation Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Target elements
+    const hiddenElements = document.querySelectorAll('.scroll-hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    // Simple Text Reveal on Load
+    window.onload = () => {
+        const texts = document.querySelectorAll('.reveal-text');
+        texts.forEach((text, index) => {
+            setTimeout(() => {
+                text.style.opacity = '1';
+                text.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+    };
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const addToCartBtns = document.querySelectorAll('.cart-btn, .buy-btn, .add-btn');
+    let cartCountElement = document.querySelector('.cart-count'); 
+
+    let cart = JSON.parse(localStorage.getItem('myDecorCart')) || [];
+
+    updateCartUI();
+
+    // --- 3. Add to Cart Logic ---
+    addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Button ka parent card dhundo
+            const card = e.target.closest('.prod-card') || e.target.closest('.glass-card') || e.target.closest('.light-card');
+            
+            if (card) {
+                // Product ki details nikalo
+                const title = card.querySelector('h3, h4').innerText;
+                const price = card.querySelector('.price').innerText;
+                const imageSrc = card.querySelector('img').src;
+
+                // Product object banao
+                const product = {
+                    title: title,
+                    price: price,
+                    image: imageSrc,
+                    id: Date.now() // Unique ID
+                };
+
+                // Cart array me add karo
+                cart.push(product);
+
+                // LocalStorage me save karo
+                localStorage.setItem('myDecorCart', JSON.stringify(cart));
+
+                // UI update karo
+                updateCartUI();
+                
+                // Notification dikhao
+                showToast(product);
+
+                const originalText = e.target.innerText;
+                e.target.innerText = "Added ✔";
+                e.target.style.background = "#d4af37";
+                e.target.style.color = "#fff";
+                
+                setTimeout(() => {
+                    e.target.innerText = originalText;
+                    e.target.style.background = ""; 
+                    e.target.style.color = "";
+                }, 2000);
+            }
+        });
+    });
+
+    function updateCartUI() {
+        if (cartCountElement) {
+            cartCountElement.innerText = cart.length;
+            if(cart.length > 0) {
+                cartCountElement.style.display = 'inline-block';
+            }
+        }
+    }
+
+    function showToast(product) {
+      
+        const existingToast = document.querySelector('.toast-box');
+        if (existingToast) existingToast.remove();
+
+        const toast = document.createElement('div');
+        toast.classList.add('toast-box');
+        toast.innerHTML = `
+            <img src="${product.image}" alt="img">
+            <div>
+                <h5 style="margin:0; font-size:0.9rem;">Added to Cart</h5>
+                <p style="margin:0; font-size:0.8rem; color:#ccc;">${product.title}</p>
+            </div>
+        `;
+
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('show');
+        }, 100);
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => {
+                toast.remove();
+            }, 400); 
+        }, 3000);
+    }
+
+    const observerOptions = {
+        threshold: 0.15 
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active-anim');
+                scrollObserver.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+
+    // Target Elements
+    const animatedElements = document.querySelectorAll('.room-card, .feature-box');
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = `
+        .room-card, .feature-box {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        .active-anim {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
+    document.head.appendChild(styleSheet);
+
+    animatedElements.forEach(el => scrollObserver.observe(el));
+
+});
