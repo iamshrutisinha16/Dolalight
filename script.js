@@ -599,3 +599,93 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach(el => scrollObserver.observe(el));
 
 });
+
+/* desklamp */
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Selectors
+    const allCheckboxes = document.querySelectorAll('.filter-chk');
+    const products = document.querySelectorAll('.dl-card');
+    const noResults = document.getElementById('noResultsMsg');
+
+    // Filter Logic
+    function applyFilters() {
+        // Collect checked values
+        const priceVals = getCheckedValues('.price-chk');
+        const wattVals = getCheckedValues('.watt-chk');
+        const typeVals = getCheckedValues('.type-chk');
+
+        let visibleCount = 0;
+
+        products.forEach(prod => {
+            const price = parseInt(prod.dataset.price);
+            const watt = prod.dataset.watt;
+            const type = prod.dataset.type;
+
+            // Check Price
+            let priceMatch = false;
+            if (priceVals.length === 0) priceMatch = true;
+            else {
+                if (priceVals.includes('low') && price <= 600) priceMatch = true;
+                if (priceVals.includes('mid') && price > 600 && price <= 900) priceMatch = true;
+                if (priceVals.includes('high') && price > 900) priceMatch = true;
+            }
+
+            // Check Wattage
+            let wattMatch = (wattVals.length === 0) || wattVals.includes(watt);
+
+            // Check Type (New)
+            let typeMatch = (typeVals.length === 0) || typeVals.includes(type);
+
+            // Final Decision
+            if (priceMatch && wattMatch && typeMatch) {
+                prod.style.display = 'flex';
+                visibleCount++;
+            } else {
+                prod.style.display = 'none';
+            }
+        });
+
+        // Toggle No Results Message
+        noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
+    }
+
+    // Helper to get array of checked values
+    function getCheckedValues(selector) {
+        return Array.from(document.querySelectorAll(selector + ':checked')).map(cb => cb.value);
+    }
+
+    // Event Listeners
+    allCheckboxes.forEach(cb => cb.addEventListener('change', applyFilters));
+});
+
+// Sidebar Toggle Mobile
+function toggleSidebar() {
+    document.getElementById('dlSidebar').classList.toggle('active');
+}
+
+// Clear Filters
+function clearFilters() {
+    document.querySelectorAll('.filter-chk').forEach(cb => cb.checked = false);
+    // Trigger change event to update grid
+    document.querySelector('.filter-chk').dispatchEvent(new Event('change'));
+}
+
+// Add to Cart Animation
+function addToCart(btn) {
+    let originalText = btn.innerText;
+    btn.innerText = "Added!";
+    btn.style.background = "#27ae60";
+    btn.style.color = "#fff";
+    btn.style.borderColor = "#27ae60";
+    setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = "#fff";
+        btn.style.color = "#2c3e50";
+        btn.style.borderColor = "#2c3e50";
+    }, 1500);
+}
+
+function scrollToShop() {
+    document.getElementById('shopArea').scrollIntoView({behavior: 'smooth'});
+}
