@@ -73,151 +73,218 @@
         </nav>
     </header>
   </section>
-  <!-- HERO -->
-  <header class="hero" id="hero" role="banner">
-    <div class="hero-inner container">
-      <div class="hero-text">
-        <p class="eyebrow">Smart Home Lighting</p>
-        <h1 class="hero-title">Make every moment beautiful with intelligent light</h1>
-        <p class="hero-sub">Minimal, elegant lighting that adapts to your life — voice & app control, schedules, scenes, and energy savings.</p>
-        <div class="hero-ctas">
-         <a href="#features" class="btn ghost">
-           Explore Features
-            </a>
-        </div>
-      </div>
+ <!-- Dolalight Premium Smart Section -->
+<section class="dsl-wrapper">
 
-      <div class="hero-media" aria-hidden="true">
-        <img src="assets/roomlightingbanner.jpg" alt="Smart home lighting living room" />
-        <div class="hero-glow"></div>
-      </div>
+    <!-- 1. Hero Section: Clean & Impactful -->
+    <div class="dsl-hero">
+        <div class="dsl-text-content">
+            <span class="dsl-badge">✨ New Technology</span>
+            <h1 class="dsl-title">Complete Control, <br><span class="dsl-highlight">Infinite Possibilities.</span></h1>
+            <p class="dsl-paragraph">
+                अपने घर को Dolalight के साथ अपग्रेड करें। ब्राइटनेस एडजस्ट करें, 16 मिलियन कलर्स बदलें और टाइमर सेट करें—सीधे अपने फोन से।
+            </p>
+            <div class="dsl-buttons">
+                <button class="dsl-btn-primary" onclick="document.getElementById('shop-section').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
+                <button class="dsl-btn-outline">Watch Demo <i class="fa-regular fa-circle-play"></i></button>
+            </div>
+        </div>
+        <div class="dsl-image-content">
+            <!-- Animated Background Blob -->
+            <div class="dsl-blob"></div>
+            <img src="https://images.unsplash.com/photo-1558002038-1091a166111c?q=80&w=1000&auto=format&fit=crop" alt="Smart Home" class="dsl-hero-img">
+            <div class="dsl-floating-badge">
+                <i class="fa-solid fa-bolt"></i> <span>Energy Saving</span>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <!-- FEATURES -->
-  <section id="features" class="section features" aria-labelledby="features-title">
-    <div class="container">
-      <h2 id="features-title" class="section-heading">Key Features</h2>
-      <p class="section-lead">Everything a modern home needs — crafted simply.</p>
+    <!-- 2. Shop Smart Collection (Improved Design) -->
+    <div id="shop-section" class="dsl-section-container">
+        <!-- New Section Header -->
+        <div class="dsl-section-header">
+            <span class="dsl-sub-head">Our Collection</span>
+            <h2>Best Selling Smart Lights</h2>
+            <div class="dsl-underline"></div>
+            <p>Upgrade your space with our premium selection.</p>
+        </div>
 
-      <div class="grid feature-grid">
-        <article class="card" data-reveal>
-          <div class="card-icon">💬</div>
-          <h3>Voice Control</h3>
-          <p>Instant control with Alexa, Google Assistant and Siri.</p>
-        </article>
+        <div class="dsl-shop-grid">
+            
+            <!-- Product 1 -->
+            <div class="dsl-product-card">
+                <div class="dsl-img-wrapper">
+                    <span class="dsl-tag sale">Sale</span>
+                    <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=600&auto=format&fit=crop" class="dsl-p-img">
+                    <button class="dsl-quick-view"><i class="fa-regular fa-eye"></i></button>
+                </div>
+                <div class="dsl-p-info">
+                    <div class="dsl-rating">
+                        <i class="fa-solid fa-star"></i> 4.8
+                    </div>
+                    <h3>Smart WiFi Bulb (RGB)</h3>
+                    <div class="dsl-price-box">
+                        <span class="dsl-current-price">₹899</span>
+                        <span class="dsl-old-price">₹1200</span>
+                    </div>
+                    <button class="dsl-add-btn" onclick="addToCart(this, 'Smart WiFi Bulb (RGB)', 899, 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=600&auto=format&fit=crop')">
+                        Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
 
-        <article class="card" data-reveal>
-          <div class="card-icon">🎛️</div>
-          <h3>Scenes & Automation</h3>
-          <p>Set scenes for wake, relax, movie and routines for daily life.</p>
-        </article>
+            <!-- Product 2 -->
+            <div class="dsl-product-card">
+                <div class="dsl-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/71s+j2gRjRL._AC_UF1000,1000_QL80_.jpg" class="dsl-p-img">
+                </div>
+                <div class="dsl-p-info">
+                    <div class="dsl-rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    <h3>Neon LED Strip 5M</h3>
+                    <div class="dsl-price-box">
+                        <span class="dsl-current-price">₹1,499</span>
+                    </div>
+                    <button class="dsl-add-btn" onclick="addToCart(this, 'Neon LED Strip 5M', 1499, 'https://m.media-amazon.com/images/I/71s+j2gRjRL._AC_UF1000,1000_QL80_.jpg')">
+                        Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
 
-        <article class="card" data-reveal>
-          <div class="card-icon">🌈</div>
-          <h3>Color & Temperature</h3>
-          <p>16M colors plus warm–cool whites for every mood.</p>
-        </article>
+            <!-- Product 3 -->
+            <div class="dsl-product-card">
+                <div class="dsl-img-wrapper">
+                    <span class="dsl-tag new">New</span>
+                    <img src="https://m.media-amazon.com/images/I/51p+Hh8+oKL._AC_UF894,1000_QL80_.jpg" class="dsl-p-img">
+                </div>
+                <div class="dsl-p-info">
+                    <div class="dsl-rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    <h3>Touch Bedside Lamp</h3>
+                    <div class="dsl-price-box">
+                        <span class="dsl-current-price">₹2,199</span>
+                    </div>
+                    <button class="dsl-add-btn" onclick="addToCart(this, 'Touch Bedside Lamp', 2199, 'https://m.media-amazon.com/images/I/51p+Hh8+oKL._AC_UF894,1000_QL80_.jpg')">
+                        Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
 
-        <article class="card" data-reveal>
-          <div class="card-icon">⚡</div>
-          <h3>Energy Smart</h3>
-          <p>Schedules & adaptive dimming to save energy automatically.</p>
-        </article>
-      </div>
+            <!-- Product 4 -->
+            <div class="dsl-product-card">
+                <div class="dsl-img-wrapper">
+                    <img src="https://image.made-in-china.com/202f0j00lKfqnrhEaRkz/Tuya-Smart-Home-Lighting-Fixture-Dimmable-Surface-Mounted-RGB-CW-WW-LED-Smart-Ceiling-Light.jpg" class="dsl-p-img">
+                </div>
+                <div class="dsl-p-info">
+                    <div class="dsl-rating"><i class="fa-solid fa-star"></i> 4.7</div>
+                    <h3>Smart Ceiling Ring</h3>
+                    <div class="dsl-price-box">
+                        <span class="dsl-current-price">₹3,499</span>
+                    </div>
+                    <button class="dsl-add-btn" onclick="addToCart(this, 'Smart Ceiling Ring', 3499, 'https://image.made-in-china.com/202f0j00lKfqnrhEaRkz/Tuya-Smart-Home-Lighting-Fixture-Dimmable-Surface-Mounted-RGB-CW-WW-LED-Smart-Ceiling-Light.jpg')">
+                        Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+          <div class="dsl-product-card">
+                <div class="dsl-img-wrapper">
+                    <span class="dsl-tag new">New</span>
+                    <img src="https://m.media-amazon.com/images/I/51p+Hh8+oKL._AC_UF894,1000_QL80_.jpg" class="dsl-p-img">
+                </div>
+                <div class="dsl-p-info">
+                    <div class="dsl-rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    <h3>Touch Bedside Lamp</h3>
+                    <div class="dsl-price-box">
+                        <span class="dsl-current-price">₹2,199</span>
+                    </div>
+                    <button class="dsl-add-btn" onclick="addToCart(this, 'Touch Bedside Lamp', 2199, 'https://m.media-amazon.com/images/I/51p+Hh8+oKL._AC_UF894,1000_QL80_.jpg')">
+                        Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+           <div class="dsl-product-card">
+                <div class="dsl-img-wrapper">
+                    <span class="dsl-tag new">New</span>
+                    <img src="https://m.media-amazon.com/images/I/51p+Hh8+oKL._AC_UF894,1000_QL80_.jpg" class="dsl-p-img">
+                </div>
+                <div class="dsl-p-info">
+                    <div class="dsl-rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    <h3>Touch Bedside Lamp</h3>
+                    <div class="dsl-price-box">
+                        <span class="dsl-current-price">₹2,199</span>
+                    </div>
+                    <button class="dsl-add-btn" onclick="addToCart(this, 'Touch Bedside Lamp', 2199, 'https://m.media-amazon.com/images/I/51p+Hh8+oKL._AC_UF894,1000_QL80_.jpg')">
+                        Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </section>
 
-  <!-- SCENARIOS / USAGE AREAS -->
-  <section id="scenarios" class="section scenarios" aria-labelledby="scenarios-title">
-    <div class="container">
-      <h2 id="scenarios-title" class="section-heading">Room Presets & Where to Use</h2>
-      <p class="section-lead">Pre-built moods for rooms so you get instant ambience.</p>
-
-      <div class="scenarios-grid">
-        <div class="scene" data-reveal>
-          <div class="scene-thumb living" role="img" aria-label="Living room"></div>
-          <h4>Living Room</h4>
-          <p>Warm ambient light for conversation & movies.</p>
+    <!-- 3. Features Section (Icon Grid) -->
+    <div class="dsl-features">
+        <div class="dsl-section-header">
+            <h2>Why Go Smart?</h2>
+            <div class="dsl-underline"></div>
         </div>
-
-        <div class="scene" data-reveal>
-          <div class="scene-thumb bedroom" role="img" aria-label="Bedroom"></div>
-          <h4>Bedroom</h4>
-          <p>Sunrise wake & gentle night light for restful sleep.</p>
+        
+        <div class="dsl-feature-grid">
+            <div class="dsl-f-card">
+                <div class="dsl-icon-box" style="background: #e3f2fd; color: #2196f3;">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+                <h3>Voice Control</h3>
+                <p>Alexa & Google Supported</p>
+            </div>
+            <div class="dsl-f-card">
+                <div class="dsl-icon-box" style="background: #f3e5f5; color: #9c27b0;">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <h3>16M Colors</h3>
+                <p>Set mood instantly</p>
+            </div>
+            <div class="dsl-f-card">
+                <div class="dsl-icon-box" style="background: #e8f5e9; color: #4caf50;">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3>App Control</h3>
+                <p>Control from anywhere</p>
+            </div>
+            <div class="dsl-f-card">
+                <div class="dsl-icon-box" style="background: #fff3e0; color: #ff9800;">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+                <h3>Smart Timer</h3>
+                <p>Automated schedules</p>
+            </div>
         </div>
-
-        <div class="scene" data-reveal>
-          <div class="scene-thumb kitchen" role="img" aria-label="Kitchen"></div>
-          <h4>Kitchen</h4>
-          <p>Bright task light for cooking and soft accent during meals.</p>
-        </div>
-
-        <div class="scene" data-reveal>
-          <div class="scene-thumb outdoor" role="img" aria-label="Outdoor"></div>
-          <h4>Porch & Outdoor</h4>
-          <p>Safe, motion-enabled illumination for entrances.</p>
-        </div>
-      </div>
     </div>
-  </section>
-  <!-- PRODUCTS -->
-<section id="products" class="section products" aria-labelledby="products-title">
-  <div class="container">
-    <h2 id="products-title" class="section-heading">Popular Products</h2>
-    <p class="section-lead">Hand-picked for most homes.</p>
 
-    <div class="grid product-grid">
-      <article class="product-card" data-reveal>
-        <div class="product-visual bulb" aria-hidden="true">
-          <img src="assets/LEDPanelsbrand.jpg" alt="Smart LED Bulb">
+    <!-- 4. Interactive Demo Area -->
+    <div class="dsl-demo-area">
+        <div class="dsl-demo-box">
+            <div class="dsl-demo-content">
+                <span class="dsl-badge">Live Demo</span>
+                <h2>Experience the Vibe</h2>
+                <p>Click colors to see magic happening in real-time.</p>
+                
+                <div class="dsl-color-palette">
+                    <button class="dsl-color-dot" style="--c: #ff4757;" onclick="changeRoomColor('#ff4757', 'Love Mode')"></button>
+                    <button class="dsl-color-dot" style="--c: #2ed573;" onclick="changeRoomColor('#2ed573', 'Relax Mode')"></button>
+                    <button class="dsl-color-dot" style="--c: #1e90ff;" onclick="changeRoomColor('#1e90ff', 'Work Mode')"></button>
+                    <button class="dsl-color-dot" style="--c: #ffa502;" onclick="changeRoomColor('#ffa502', 'Cozy Mode')"></button>
+                </div>
+                <h4 id="dsl-mood-status">Current Mode: Default</h4>
+            </div>
+            <div class="dsl-demo-image-box">
+                <div class="dsl-demo-overlay" id="dsl-overlay-layer"></div>
+                <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=1000&auto=format&fit=crop" class="dsl-demo-img">
+            </div>
         </div>
-        <h3>Smart LED Bulb</h3>
-        <p>RGB + Tunable White • App & Voice Control</p>
-        <div class="product-actions">
-          <button class="btn primary small" onclick="window.location.href='shop-by-product.html'">Buy</button>
-          <button class="btn ghost small" data-preview="Warm Relax">Preview</button>
-        </div>
-      </article>
-
-      <article class="product-card" data-reveal>
-        <div class="product-visual strip" aria-hidden="true">
-          <img src="assets/SmartLightStrip.jpg" alt="Smart Light Strip">
-        </div>
-        <h3>Smart Light Strip</h3>
-        <p>Flex strips for coves, TVs and under-cabinets.</p>
-        <div class="product-actions">
-          <button class="btn primary small" onclick="window.location.href='shop-by-product.html'">Buy</button>
-          <button class="btn ghost small" data-preview="Party">Preview</button>
-        </div>
-      </article>
-
-      <article class="product-card" data-reveal>
-        <div class="product-visual panel" aria-hidden="true">
-          <img src="assets/PanelLights.jpg" alt="Smart Panel Light">
-        </div>
-        <h3>Smart Panel Light</h3>
-        <p>Slim ceiling panel • High CRI for accurate color.</p>
-        <div class="product-actions">
-        <button class="btn primary small" onclick="window.location.href='shop-by-product.html'">Buy</button>
-          <button class="btn ghost small" data-preview="Focus">Preview</button>
-        </div>
-      </article>
     </div>
-  </div>
+
 </section>
- <!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="container cta-wrap">
-    <h2>Upgrade Your Home Lighting Today!</h2>
-    <p>Explore smart lighting solutions that fit every room and mood.</p>
-    <div class="cta-actions">
-      <a href="#products" class="btn primary">Shop Now</a>
-      <a href="#learn-more" class="btn ghost">Learn More</a>
-    </div>
-  </div>
-</section>
 
+</section>
   <footer>
   <div class="footer-features-strip">
   <div class="footer-container">

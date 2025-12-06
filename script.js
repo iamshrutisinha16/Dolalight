@@ -689,3 +689,15 @@ function addToCart(btn) {
 function scrollToShop() {
     document.getElementById('shopArea').scrollIntoView({behavior: 'smooth'});
 }
+
+ function changeRoomColor(color, name) {
+        // Change Overlay Color
+        document.getElementById('dsl-overlay-layer').style.backgroundColor = color;
+        
+        // Change Status Text
+        const status = document.getElementById('dsl-mood-status');
+        status.innerText = "Mode: " + name;
+        status.style.color = color;
+    }
+
+    
