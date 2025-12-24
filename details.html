@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolalight | Premium Lighting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">Free shipping on all US orders | Secure Payment Trusted</div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+             <div class="logo">
+             <img src="assets/img/dolalogo.png" alt="Dola Light Logo">
+         </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                 <li><a href="lighting.html">Lightings</a></li>
+                <li><a href="index.html#project">Project</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Search lights...">
+                    <i class="fas fa-search"></i>
+                </div>
+               <a class="account-btn" onclick="openLogin()">
+        <i class="fas fa-user-circle"></i> Account
+      </a>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+  <!-- LOGIN POPUP -->
+<div class="login-overlay" id="loginPopup">
+  <div class="login-box">
+
+     <button class="login-close" onclick="closeLogin()">×</button>
+    <div class="login-left">
+      <h2>Lighting Your World</h2>
+      <p>Premium & Smart Lighting Solutions</p>
+      <img src="assets/img/aboutUs.jpg">
+    </div>
+
+    <div class="login-right">
+      <h2>DOLALIGHT</h2>
+      <p>Login to your account</p>
+
+      <input type="email" placeholder="Email ID">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+
+      <span class="small-text">
+        Don’t have an account? Please login to continue.
+      </span>
+    </div>
+
+  </div>
+</div>
+
+<section class="product-container fade-up">
+
+    <div class="product-image">
+        <img src="assets/img/FocusVisionDeskLamp.jpg" alt="ProDesign Architect Lamp">
+    </div>
+
+    <div class="product-info">
+        <h1>ProDesign Architect Lamp</h1>
+
+        <div class="rating">
+            ⭐⭐⭐⭐⭐ <span>5.0 / 5</span>
+        </div>
+
+        <div class="price-box">
+            <span class="sale-price">₹700</span>
+            <span class="mrp">MRP: ₹2,000</span>
+            <span class="discount">65% OFF</span>
+        </div>
+
+        <p class="tax">Inclusive of all taxes</p>
+
+        <div class="variant">
+            <p>Select Wattage</p>
+            <button class="active">10W</button>
+        </div>
+
+        <div class="offers">
+            <h3>Offers</h3>
+            <p>💼 Save 18% On Business Purchase With GST Invoice</p>
+        </div>
+
+        <div class="actions">
+            <button class="whatsapp-btn" onclick="connectWhatsApp()">
+                Connect on WhatsApp
+            </button>
+        </div>
+
+        <div class="highlights">
+            <h3>Product Highlights</h3>
+            <ul>
+                <li>16 Million Colours RGB Smart Bulb</li>
+                <li>WiFi Enabled – No Hub Required</li>
+                <li>Controlled via Smart App</li>
+                <li>Perfect for Living Room & Bedroom</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class="specs fade-up">
+    <h2>Product Specifications</h2>
+    <table>
+        <tr><td>Wattage</td><td>10W</td></tr>
+        <tr><td>Brightness</td><td>850 Lumens</td></tr>
+        <tr><td>Colour</td><td>RGB</td></tr>
+        <tr><td>WiFi</td><td>Yes</td></tr>
+        <tr><td>Voltage</td><td>220-240V</td></tr>
+        <tr><td>Material</td><td>Polycarbonate</td></tr>
+        <tr><td>Country</td><td>India</td></tr>
+    </table>
+</section>
+
+<section class="faq fade-up">
+    <h2>FAQs</h2>
+
+    <div class="faq-item">
+        <div class="faq-question">Does it support Alexa?</div>
+        <div class="faq-answer">Yes, it supports Alexa & Google Assistant.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Is installation easy?</div>
+        <div class="faq-answer">Yes, just screw and connect via app.</div>
+    </div>
+</section>
+<footer class="dl-footer">
+  <div class="dl-footer-container">
+    
+    <div class="dl-footer-top">
+      <!-- About Section -->
+      <div class="dl-footer-about">
+         <div class="logo">
+             <img src="assets/img/dolalogo.png" alt="Dola Light Logo">
+         </div>
+        <p>
+          We offer high-quality, energy-efficient lighting solutions for homes, offices, shops, and industries. 
+          Combining style, durability, and modern design.
+        </p>
+        <div class="dl-social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61581704102972" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/dola.lights/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Informations -->
+      <div class="dl-footer-section">
+        <h3>Informations</h3>
+        <ul>
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Condition</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="dl-footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="product.html">Product</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      
+      <!-- Contact Info -->
+      <div class="dl-footer-section dl-contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+919560348099">+91 9560348099</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@arnavpot.com">info@arnavpot.com</a></p>
+        <p><i class="fa-solid fa-location-dot"></i>
+          <a href="https://goo.gl/maps/YOURLOCATION" target="_blank">
+            C-1277, Sushant Lok-1,<br>
+            Chakarpur (74), Gurgaon -122002
+            Haryana, India
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Newsletter Row -->
+    <div class="dl-newsletter-full">
+      <h3>Newsletter Sign Up</h3>
+      <p>Enter your email to receive daily news and get 20% off coupon.</p>
+      <form class="dl-newsletter-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="dl-footer-bottom">
+    &copy; 2025 Dolalight.com | All Rights Reserved
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

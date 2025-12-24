@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolalight | Premium Lighting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">Free shipping on all US orders | Secure Payment Trusted</div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+           <div class="logo">
+             <img src="assets/img/dolalogo.png" alt="Dola Light Logo">
+         </div>
+ 
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                 <li><a href="lighting.html">Lightings</a></li>
+                <li><a href="index.html#project">Project</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Search lights...">
+                    <i class="fas fa-search"></i>
+                </div>
+               <a class="account-btn" onclick="openLogin()">
+        <i class="fas fa-user-circle"></i> Account
+      </a>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+  <!-- LOGIN POPUP -->
+<div class="login-overlay" id="loginPopup">
+  <div class="login-box">
+
+     <button class="login-close" onclick="closeLogin()">×</button>
+    <div class="login-left">
+      <h2>Lighting Your World</h2>
+      <p>Premium & Smart Lighting Solutions</p>
+      <img src="assets/img/aboutUs.jpg">
+    </div>
+
+    <div class="login-right">
+      <h2>DOLALIGHT</h2>
+      <p>Login to your account</p>
+
+      <input type="email" placeholder="Email ID">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+
+      <span class="small-text">
+        Don’t have an account? Please login to continue.
+      </span>
+    </div>
+
+  </div>
+</div>
+<!-- 1. HERO SLIDER -->
+    <section class="hm-hero">
+        <div class="hm-slides" id="heroSlider">
+            <div class="hm-slide">
+                <img src="assets/img/collectionimg.jpg" alt="Banner 1">
+                <div class="hm-hero-text">
+                    <h1>Light Up Your Life In Every Color</h1>
+                    <p>Innovative LED solutions for modern interiors and outdoor spaces.</p>
+                    <a href="#shop" class="hm-btn">Explore Collections</a>
+                </div>
+            </div>
+            <div class="hm-slide">
+                <img src="assets/img/Roombanner.jpg" alt="Banner 2">
+                <div class="hm-hero-text">
+                    <h1>Luxury Meets <br>Efficiency</h1>
+                    <p>Up to 80% energy savings with our Premium Series.</p>
+                    <a href="#shop" class="hm-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Who We Are Section -->
+    <section class="who-we-are">
+        <div class="company-img-wrapper" data-aos="fade-right">
+            <!-- Replace with your actual Company Image -->
+            <img src="assets/img/aboutUs.jpg" alt="DolaLight Office" class="company-img">
+            <div class="experience-badge">
+                <span>10+</span>
+                Years Experience
+            </div>
+        </div>
+        <div class="who-text" data-aos="fade-left">
+            <h4>WHO WE ARE</h4>
+            <h2>Shaping the Future of <br><span style="color: var(--dark-blue);">Modern Lighting</span></h2>
+            <p>DolaLight, based in Gurgaon, offers premium LED lighting solutions that unite innovative technology, elegant design, and energy efficiency.</p>
+            <p>As a trusted name, we deliver high-performance LED solutions that blend cutting-edge technology with stylish design, ensuring every space looks exceptional.</p>
+            <a href="#" class="contact-btn">Contact Now</a>
+        </div>
+    </section>
+    <!-- 2. SHOP BY SECTION -->
+    <section class="hm-section" id="shop">
+        <div class="hm-title hm-fade">
+            <h2>Shop By </h2>
+            <div class="line"></div>
+        </div>
+        <div class="hm-shop-grid">
+            <div class="hm-shop-card hm-fade">
+                <img src="assets/img/product.jpg" class="hm-card-img" alt="Product">
+                <h3>Shop By Product</h3>
+                <p>LED, Decorative, Ceiling & Wall lights.</p>
+            </div>
+            <div class="hm-shop-card hm-fade">
+                <img src="assets/img/style.jpg" class="hm-card-img" alt="Style">
+                <h3>Shop By Style</h3>
+                <p>Modern, Minimalist & Classic designs.</p>
+            </div>
+            <div class="hm-shop-card hm-fade">
+                <img src="assets/img/room.jpg" class="hm-card-img" alt="Room">
+                <h3>Shop By Room</h3>
+                <p>Lamps for Bedroom, Office & Living room.</p>
+            </div>
+             <div class="hm-shop-card hm-fade">
+                <img src="assets/img/brand.jpg" class="hm-card-img" alt="Room">
+                <h3>Shop By Brand</h3>
+                <p>Lamps for Bedroom, Office & Living room.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PREMIUM LED SERIES -->
+    <section class="hm-section" style="background: white;">
+        <div class="hm-title hm-fade">
+            <h2>Premium LED Series</h2>
+        </div>
+        <div class="hm-premium-grid">
+            <div class="hm-premium-card hm-fade">
+                <img src="assets/img/crystal.jpg" alt="Crystal">
+                <div class="hm-premium-overlay">
+                    <h3>Crystal Glow Panel</h3>
+                    <p>Luxury defined for modern ceilings.</p>
+                </div>
+            </div>
+            <div class="hm-premium-card hm-fade">
+                <img src="assets/img/goldenluxeseries.jpg" alt="Golden">
+                <div class="hm-premium-overlay">
+                    <h3>Golden Luxe Series</h3>
+                    <p>Elegance in every warm glow.</p>
+                </div>
+            </div>
+            <div class="hm-premium-card hm-fade">
+                <img src="assets/img/DiamondSpotLED.jpg" alt="Diamond">
+                <div class="hm-premium-overlay">
+                    <h3>Diamond Spot LED</h3>
+                    <p>Focus that matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FEATURED PRODUCTS -->
+    <section class="hm-section">
+        <div class="hm-title hm-fade">
+            <h2>Best Selling Lights</h2>
+        </div>
+        <div class="hm-product-grid">
+            <div class="hm-prod-card hm-fade">
+                <img src="assets/img/LEDCeilingLight.jpg" class="hm-prod-img" alt="P1">
+                <h4>Crystal LED Panel</h4>
+                <a href="details.html" class="hm-btn" style="padding: 10px 20px; font-size: 0.8rem; margin-top: 10px;">Details</a>
+            </div>
+            <div class="hm-prod-card hm-fade">
+                <img src="assets/img/WallSconce.jpg" class="hm-prod-img" alt="P2">
+                <h4>Warm Glow Spotlight</h4>
+                <a href="details.html" class="hm-btn" style="padding: 10px 20px; font-size: 0.8rem; margin-top: 10px;">Details</a>
+            </div>
+            <div class="hm-prod-card hm-fade">
+                <img src="assets/img/DesignerCeilingLight.jpg" class="hm-prod-img" alt="P3">
+                <h4>Designer Ceiling</h4>
+                <a href="details.html" class="hm-btn" style="padding: 10px 20px; font-size: 0.8rem; margin-top: 10px;">Details</a>
+            </div>
+            <div class="hm-prod-card hm-fade">
+                <img src="assets/img/LEDWallSconce.jpg" class="hm-prod-img" alt="P4">
+                <h4>LED Wall Sconce</h4>
+                <a href="details.html" class="hm-btn" style="padding: 10px 20px; font-size: 0.8rem; margin-top: 10px;">Details</a>
+            </div>
+        </div>
+    </section>
+     <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="section-title" style="text-align: center;" data-aos="fade-up">
+            <h2>Why Choose Us</h2>
+        </div>
+
+        <div class="why-grid">
+            <!-- 1. Quality Product -->
+            <div class="why-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-icon">🏆</div>
+                <div class="why-info">
+                    <h3>Quality Product</h3>
+                    <p>Premium LED solutions with superior performance.</p>
+                </div>
+            </div>
+
+            <!-- 2. Primary Products -->
+            <div class="why-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="why-icon">📦</div>
+                <div class="why-info">
+                    <h3>Primary Products</h3>
+                    <p>Wide range of innovative lighting options.</p>
+                </div>
+            </div>
+
+            <!-- 3. 24 Hour Support -->
+            <div class="why-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="why-icon">⏰</div>
+                <div class="why-info">
+                    <h3>24 Hour Support</h3>
+                    <p>Always here to assist you anytime.</p>
+                </div>
+            </div>
+
+            <!-- 4. Free Shipping -->
+            <div class="why-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="why-icon">🚚</div>
+                <div class="why-info">
+                    <h3>Free Shipping</h3>
+                    <p>Free shipping on all orders over the city.</p>
+                </div>
+            </div>
+
+            <!-- 5. Secure Payment -->
+            <div class="why-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="why-icon">🔒</div>
+                <div class="why-info">
+                    <h3>Secure Payment</h3>
+                    <p>Trusted & secure payment methods.</p>
+                </div>
+            </div>
+
+            <!-- 6. Money Guarantee -->
+            <div class="why-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="why-icon">💰</div>
+                <div class="why-info">
+                    <h3>Money Guarantee</h3>
+                    <p>30 days money-back guarantee policy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 6. OUR PROJECTS -->
+    <section id="project" class="hm-section">
+        <div class="hm-title hm-fade">
+            <h2>Our Projects</h2>
+        </div>
+        <div class="hm-project-grid">
+            <div class="hm-proj-card hm-fade">
+                <img src="assets/img/project-1.jpg" alt="P1">
+                <div class="hm-proj-info"><h3>City Park</h3><p>Jaipur, Rajasthan</p></div>
+            </div>
+            <div class="hm-proj-card hm-fade">
+                <img src="assets/img/project-2.jpg" alt="P2">
+                <div class="hm-proj-info"><h3>Ashok Leyland</h3><p>Chennai, Tamil Nadu</p></div>
+            </div>
+            <div class="hm-proj-card hm-fade">
+                <img src="assets/img/project-3.jpg" alt="P3">
+                <div class="hm-proj-info"><h3>Saintgits College</h3><p>Kottayam, Kerala</p></div>
+            </div>
+        </div>
+    </section>
+    
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How long does it take to get a response?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We typically respond to all inquiries within 24 business hours.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do you provide customer support?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes, we provide 24/7 technical support for all our LED products.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Where is your office located?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Our head office is in Gurgaon, Haryana. You can find the exact address on the map above.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What services do you offer?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We specialize in LED lighting solutions, customized light installations, and energy-saving consultations.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What makes Dolalight products special?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Our products use high-grade components that ensure long life, maximum brightness, and low energy consumption.
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="dl-footer">
+  <div class="dl-footer-container">
+    
+    <div class="dl-footer-top">
+      <!-- About Section -->
+      <div class="dl-footer-about">
+         <div class="logo">
+             <img src="assets/img/dolalogo.png" alt="Dola Light Logo">
+         </div>
+        <p>
+          We offer high-quality, energy-efficient lighting solutions for homes, offices, shops, and industries. 
+          Combining style, durability, and modern design.
+        </p>
+        <div class="dl-social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61581704102972" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/dola.lights/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Informations -->
+      <div class="dl-footer-section">
+        <h3>Informations</h3>
+        <ul>
+          <li><a href="login-overlay">My Account</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Condition</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="dl-footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="product.html">Product</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="dl-footer-section dl-contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+919560348099">+91 9560348099</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@arnavpot.com">info@arnavpot.com</a></p>
+        <p><i class="fa-solid fa-location-dot"></i>
+          <a href="https://goo.gl/maps/YOURLOCATION" target="_blank">
+            C-1277, Sushant Lok-1,<br>
+            Chakarpur (74), Gurgaon -122002
+            Haryana, India
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Newsletter Row -->
+    <div class="dl-newsletter-full">
+      <h3>Newsletter Sign Up</h3>
+      <p>Enter your email to receive daily news and get 20% off coupon.</p>
+      <form class="dl-newsletter-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="dl-footer-bottom">
+    &copy; 2025 Dolalight.com | All Rights Reserved
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
