@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /* ================= MOBILE MENU ================= */
-    const menuBtn = document.querySelector('.menu-btn');
-    if (menuBtn) {
-        menuBtn.addEventListener('click', () => {
-            alert('Mobile menu coming soon!');
-        });
-    }
+    const toggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
 
     /* ================= FAQ ================= */
     document.querySelectorAll('.faq-question').forEach(btn => {
