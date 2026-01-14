@@ -2314,6 +2314,24 @@ body {
     }
 }
 
+@media (max-width: 992px) {
+    .dl-hero {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dl-hero {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dl-hero {
+        min-height: 250px;
+    }
+}
+
 /* PRODUCT GRID */
 .dl-product-grid {
     display: grid;
