@@ -1207,7 +1207,7 @@ body {
 
 /* ================= CONTACT PAGE ================= */
 .banner {
-    min-height: 500px;   
+    min-height: 550px;   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1227,7 +1227,7 @@ body {
         }
 
      .contact-cards {
-    margin-top: 100px;
+    margin-top: 70px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
