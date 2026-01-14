@@ -2272,63 +2272,83 @@ body {
     font-size: 0.9rem;
 }
 
-@media (max-width: 992px) {
-    .dl-service-strip {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding: 30px 5%;
-        gap: 15px;
-    }
-    .dl-serv-text strong {
-        font-size: 1rem;
-    }
-    .dl-serv-text span {
-        font-size: 0.85rem;
-    }
-}
-
 @media (max-width: 768px) {
+    body, .dl-main-wrapper {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .dl-hero {
+        width: 100%;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0;
+        padding: 0;
+    }
+    .dl-hero-img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+        object-fit: contain; 
+    }
+
     .dl-service-strip {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding: 30px 5%;
-        gap: 12px;
+        display: flex !important; 
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        padding: 10px 5px !important;
+        background: #fff;
+        gap: 2px !important; 
+        box-sizing: border-box !important;
     }
+
+    .dl-serv-item {
+        flex: 1 !important;
+        min-width: 0; 
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .dl-serv-icon {
+        margin: 0 0 4px 0 !important;
+    }
+
+    .dl-serv-icon img, 
+    .dl-serv-icon i {
+        width: 18px !important; /* Icon thoda chhota */
+        height: 18px !important;
+        font-size: 16px !important;
+    }
+
+    .dl-serv-text {
+        width: 100%;
+    }
+
     .dl-serv-text strong {
-        font-size: 1rem;
+        font-size: 7.5px !important; /* Screen ke andar fit hone ke liye font size */
+        display: block;
+        line-height: 1;
+        white-space: normal; /* Text ko wrap hone do agar lamba hai */
+        word-wrap: break-word;
+        font-weight: 700;
+        color: #000;
     }
+
+    /* Sub-text (Orders above 499) ko hide rakha hai taaki 4 items fit ho sakein */
     .dl-serv-text span {
-        font-size: 0.85rem;
+        display: none !important;
     }
 }
 
-@media (max-width: 480px) {
-    .dl-service-strip {
-        grid-template-columns: 1fr;
-        padding: 25px 3%;
-        gap: 10px;
-    }
+/* Specific fix for iPhone SE and very small phones */
+@media (max-width: 380px) {
     .dl-serv-text strong {
-        font-size: 0.95rem;
+        font-size: 7px !important;
     }
-    .dl-serv-text span {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .dl-hero {
-        min-height: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    .dl-hero {
-        min-height: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .dl-hero {
-        min-height: 250px;
+    .dl-serv-icon img, .dl-serv-icon i {
+        width: 15px !important;
     }
 }
 
@@ -2482,63 +2502,6 @@ body {
 .dl-btn-cart:hover {
     background: var(--dark-blue);
     transform: translateY(-2px);
-}
-
-@media (max-width: 992px) {
-    .dl-hero {
-        height: 60vh;
-    }
-    .dl-service-strip {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        padding: 25px 3%;
-    }
-    .dl-product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .dl-hero {
-        height: 50vh;
-    }
-    .dl-service-strip {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        padding: 20px 5%;
-    }
-    .dl-card-info h3 {
-        font-size: 0.95rem;
-    }
-    .dl-price-block .dl-current {
-        font-size: 0.9rem;
-    }
-}
-
-/* SMALL MOBILE */
-@media (max-width: 480px) {
-    .dl-hero {
-        height: 40vh;
-    }
-    .dl-service-strip {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .dl-service-item {
-        justify-content: center;
-    }
-    .dl-card-info h3 {
-        font-size: 0.9rem;
-    }
-    .dl-price-block {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-    .dl-btn-cart {
-        font-size: 0.9rem;
-        padding: 6px 10px;
-    }
 }
 
 /*details page*/
