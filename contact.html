@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolalight | Premium Lighting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">Free shipping on all US orders | Secure Payment Trusted</div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+           <div class="logo">
+             <img src="assets/img/dolalogo.png" alt="Dola Light Logo">
+         </div>
+ 
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                 <li><a href="lighting.html">Lightings</a></li>
+                <li><a href="index.html#project">Project</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Search lights...">
+                    <i class="fas fa-search"></i>
+                </div>
+               <a class="account-btn" onclick="openLogin()">
+        <i class="fas fa-user-circle"></i> Account
+          </a>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+  <!-- LOGIN POPUP -->
+<div class="login-overlay" id="loginPopup">
+  <div class="login-box">
+
+     <button class="login-close" onclick="closeLogin()">×</button>
+    <div class="login-left">
+      <h2>Lighting Your World</h2>
+      <p>Premium & Smart Lighting Solutions</p>
+      <img src="assets/img/aboutUs.jpg">
+    </div>
+
+    <div class="login-right">
+      <h2>DOLALIGHT</h2>
+      <p>Login to your account</p>
+
+      <input type="email" placeholder="Email ID">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+
+      <span class="small-text">
+        Don’t have an account? Please login to continue.
+      </span>
+    </div>
+
+  </div>
+</div>
+    <!-- Header Banner -->
+    <div class="banner">
+        <div class="banner-content">
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Contact Info Cards -->
+        <div class="contact-cards">
+            <div class="card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Our Address</h3>
+                <p>C-1277, Sushnat Lok-1, Chakarpur (74),<br>Gurgaon - 122002 Haryana</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Phone Number</h3>
+                  <p><a href="tel:+919560348099">+91 9560348099</a></p>
+            </div>
+            <div class="card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Address</h3>
+               <p><a href="mailto:info@arnavpot.com">info@arnavpot.com</a></p>
+            </div>
+        </div>
+
+        <!-- Form & Map -->
+        <div class="main-contact">
+            <div class="form-container">
+                <h2>Get Your Free Consultation</h2>
+                <form id="contactForm">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" class="form-control" placeholder="Enter Phone No." required>
+                        <input type="text" class="form-control" placeholder="Enter Product">
+                    </div>
+                    <div class="input-group" style="grid-template-columns: 1fr;">
+                        <textarea class="form-control" placeholder="Your Address / Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Now</button>
+                </form>
+
+                <div class="social-media">
+                    <h4>Follow The Social Media</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61581704102972"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/dola.lights/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.347206126639!2d77.0683525!3d28.4540226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18eb808a3d1b%3A0xc3f833777d853e5e!2sSushant%20Lok%20Phase%20I%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1703058000000" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+<section class="dl-faq-section">
+  <div class="dl-faq-wrapper">
+
+    <!-- LEFT : FAQ -->
+    <div class="dl-faq-content">
+      <h2 class="dl-faq-title">Frequently Asked Questions</h2>
+
+      <div class="dl-faq-item active">
+        <button class="dl-faq-question">
+          What types of lighting products does Dolalight offer?
+          <span>+</span>
+        </button>
+        <div class="dl-faq-answer">
+          Dolalight offers LED panel lights, street lights, flood lights,
+          decorative lighting and energy-efficient indoor & outdoor solutions.
+        </div>
+      </div>
+
+      <div class="dl-faq-item">
+        <button class="dl-faq-question">
+          Are Dolalight products energy efficient?
+          <span>+</span>
+        </button>
+        <div class="dl-faq-answer">
+          Yes, all Dolalight products are designed to consume less power while
+          delivering maximum brightness and longer lifespan.
+        </div>
+      </div>
+
+      <div class="dl-faq-item">
+        <button class="dl-faq-question">
+          Do you provide warranty on lighting products?
+          <span>+</span>
+        </button>
+        <div class="dl-faq-answer">
+          Absolutely. Our lighting solutions come with quality assurance and
+          manufacturer warranty for complete peace of mind.
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT : IMAGE -->
+    <div class="dl-faq-image">
+      <img src="assets/img/faqimage.png" alt="Dolalight LED Products">
+    </div>
+
+  </div>
+</section>
+    </div>
+<footer class="dl-footer">
+  <div class="dl-footer-container">
+    
+    <div class="dl-footer-top">
+      <!-- About Section -->
+      <div class="dl-footer-about">
+         <div class="logo">
+             <img src="assets/img/dolalogo.png" alt="Dola Light Logo">
+         </div>
+        <p>
+          We offer high-quality, energy-efficient lighting solutions for homes, offices, shops, and industries. 
+          Combining style, durability, and modern design.
+        </p>
+        <div class="dl-social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61581704102972" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/dola.lights/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Informations -->
+      <div class="dl-footer-section">
+        <h3>Informations</h3>
+        <ul>
+          <li><a href="login-overlay">My Account</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Condition</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="dl-footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="product.html">Product</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="dl-footer-section dl-contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+919560348099">+91 9560348099</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@arnavpot.com">info@arnavpot.com</a></p>
+        <p><i class="fa-solid fa-location-dot"></i>
+          <a href="https://goo.gl/maps/YOURLOCATION" target="_blank">
+            C-1277, Sushant Lok-1,<br>
+            Chakarpur (74), Gurgaon -122002
+            Haryana, India
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dl-footer-bottom">
+    &copy; 2025 Dolalight.com | All Rights Reserved
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolalight | Premium Lighting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">Free shipping on all US orders | Secure Payment Trusted</div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+              <div class="logo">
+             <img src="assets/img/dolalogo.png" alt="Dola Light Logo">
+         </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                 <li><a href="lighting.html">Lightings</a></li>
+                <li><a href="index.html#project">Project</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Search lights...">
+                    <i class="fas fa-search"></i>
+                </div>
+               <a class="account-btn" onclick="openLogin()">
+        <i class="fas fa-user-circle"></i> Account
+      </a>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+  <!-- LOGIN POPUP -->
+<div class="login-overlay" id="loginPopup">
+  <div class="login-box">
+
+     <button class="login-close" onclick="closeLogin()">×</button>
+    <div class="login-left">
+      <h2>Lighting Your World</h2>
+      <p>Premium & Smart Lighting Solutions</p>
+      <img src="assets/img/aboutUs.jpg">
+    </div>
+
+    <div class="login-right">
+      <h2>DOLALIGHT</h2>
+      <p>Login to your account</p>
+
+      <input type="email" placeholder="Email ID">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+
+      <span class="small-text">
+         Don’t have an account? Please login to continue.
+      </span>
+    </div>
+
+  </div>
+</div>
+<!-- Dolalight Complete Product Page -->
+<div class="dl-main-wrapper">
+
+    <section class="dl-hero">
+    <img src="assets/img/lightingbanner.png" class="dl-hero-img" alt="Banner">
+</section>
+
+    <!-- 2. SERVICE INFO STRIP (Trust Badges) -->
+    <section class="dl-service-strip">
+        <div class="dl-service-item">
+            <span class="dl-serv-icon"><i class="fa-solid fa-truck"></i></span>
+            <div class="dl-serv-text">
+                <strong>Free Delivery</strong>
+                <span>On orders above ₹499</span>
+            </div>
+        </div>
+        <div class="dl-service-item">
+            <span class="dl-serv-icon"><i class="fa-solid fa-arrow-rotate-left"></i></span>
+            <div class="dl-serv-text">
+                <strong>Easy Return</strong>
+                <span>7 Days Replacement</span>
+            </div>
+        </div>
+       <div class="dl-service-item">
+    <span class="dl-serv-icon"><i class="fa-solid fa-file-invoice"></i></span>
+    <div class="dl-serv-text">
+        <strong>GST Billing</strong>
+        <span>Available for Business</span>
+    </div>
+</div>
+        <div class="dl-service-item">
+            <span class="dl-serv-icon">🇮🇳</span>
+            <div class="dl-serv-text">
+                <strong>Pan India</strong>
+                <span>Delivery to 19k+ Pincodes</span>
+            </div>
+        </div>
+    </section>
+        <!-- RIGHT PRODUCT GRID -->
+        <main class="dl-product-grid">
+            
+            <!-- Product 1 -->
+            <div class="dl-card" data-price="425" data-watt="3w" data-type="table">
+                <span class="dl-badge">Best Seller</span>
+                <div class="dl-card-img">
+                    <img src="assets/img/DolalightEllipseEmergency.jpg" alt="Lamp">
+                </div>
+                <div class="dl-card-info">
+                    <div class="dl-cat-name">Table Lamp</div>
+                    <h3>Dolalight Ellipse Emergency</h3>
+                    <div class="dl-rating">★★★★☆ (120)</div>
+                    
+                    <div class="dl-price-block">
+                        <span class="dl-current">₹425</span>
+                        <span class="dl-old">₹650</span>
+                        <span class="dl-off">35% OFF</span>
+                    </div>
+
+                    <div class="dl-action-btns">
+                        <button class="dl-btn-cart" onclick="addToCart(this)">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="dl-card" data-price="959" data-watt="7w" data-type="desk">
+                <div class="dl-card-img">
+                    <img src="assets/img/OptiGlowDeskLight.jpg" alt="Lamp">
+                </div>
+                <div class="dl-card-info">
+                    <div class="dl-cat-name">Desk Lamp</div>
+                    <h3>OptiGlow Desk Light</h3>
+                    <div class="dl-rating">★★★★★ (450)</div>
+
+                    <div class="dl-price-block">
+                        <span class="dl-current">₹959</span>
+                        <span class="dl-old">₹1,500</span>
+                        <span class="dl-off">30% OFF</span>
+                    </div>
+
+                    <div class="dl-action-btns">
+                        <button class="dl-btn-cart" onclick="addToCart(this)">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Product 3 -->
+            <div class="dl-card" data-price="1200" data-watt="7w" data-type="desk">
+                <span class="dl-badge new">New</span>
+                <div class="dl-card-img">
+                    <img src="assets/img/FocusVisionDeskLamp.jpg" alt="Lamp">
+                </div>
+                <div class="dl-card-info">
+                    <div class="dl-cat-name">Desk Lamp</div>
+                    <h3>FocusVision Desk Lamp</h3>
+                    <div class="dl-rating">★★★★☆ (85)</div>
+
+                    <div class="dl-price-block">
+                        <span class="dl-current">₹1,200</span>
+                        <span class="dl-old">₹1,800</span>
+                        <span class="dl-off">25% OFF</span>
+                    </div>
+
+                    <div class="dl-action-btns">
+                        <button class="dl-btn-cart" onclick="addToCart(this)">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Product 3 -->
+            <div class="dl-card" data-price="1200" data-watt="7w" data-type="desk">
+                <span class="dl-badge new">New</span>
+                <div class="dl-card-img">
+                    <img src="assets/img/GlowForgeDeskLight.jpg" alt="Lamp">
+                </div>
+                <div class="dl-card-info">
+                    <div class="dl-cat-name">Desk Lamp</div>
+                    <h3>GlowForge Desk Light</h3>
+                    <div class="dl-rating">★★★★☆ (85)</div>
+
+                    <div class="dl-price-block">
+                        <span class="dl-current">₹1,200</span>
+                        <span class="dl-old">₹1,800</span>
+                        <span class="dl-off">25% OFF</span>
+                    </div>
+
+                    <div class="dl-action-btns">
+                        <button class="dl-btn-cart" onclick="addToCart(this)">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="dl-card" data-price="1200" data-watt="7w" data-type="desk">
+                <span class="dl-badge new">New</span>
+                <div class="dl-card-img">
+                    <img src="assets/img/desklampgallery4.jpg" alt="Lamp">
+                </div>
+                <div class="dl-card-info">
+                    <div class="dl-cat-name">Desk Lamp</div>
+                    <h3>Axis Desk Lamp</h3>
+                    <div class="dl-rating">★★★★☆ (85)</div>
+
+                    <div class="dl-price-block">
+                        <span class="dl-current">₹1,200</span>
+                        <span class="dl-old">₹1,800</span>
+                        <span class="dl-off">25% OFF</span>
+                    </div>
+
+                    <div class="dl-action-btns">
+                        <button class="dl-btn-cart" onclick="addToCart(this)">View <Details></Details></button>
+                    </div>
+                </div>
+            </div>
+              <!-- Product 3 -->
+            <div class="dl-card" data-price="1200" data-watt="7w" data-type="desk">
+                <span class="dl-badge new">New</span>
+                <div class="dl-card-img">
+                    <img src="assets/img/SmartLightStrip.jpg" alt="Lamp">
+                </div>
+                <div class="dl-card-info">
+                    <div class="dl-cat-name">Desk Lamp</div>
+                    <h3>VisionEdge Architect Lamp</h3>
+                    <div class="dl-rating">★★★★☆ (85)</div>
+
+                    <div class="dl-price-block">
+                        <span class="dl-current">₹1,200</span>
+                        <span class="dl-old">₹1,800</span>
+                        <span class="dl-off">25% OFF</span>
+                    </div>
+
+                    <div class="dl-action-btns">
+                        <button class="dl-btn-cart" onclick="addToCart(this)">View Details</button>
+                    </div>
+                </div>
+            </div>
+              <!-- Product 3 -->
+            <div class="dl-card" data-price="1200" data-watt="7w" data-type="desk">
+                <span class="dl-badge new">New</span>
+                <div class="dl-card-img">
+                    <img src="assets/img/lassic Style.jpg" alt="Lamp">
+                </div>
+                <div class="dl-card-info">
+                    <div class="dl-cat-name">Desk Lamp</div>
+                    <h3>ProDesign Architect Lamp</h3>
+                    <div class="dl-rating">★★★★☆ (85)</div>
+
+                    <div class="dl-price-block">
+                        <span class="dl-current">₹1,200</span>
+                        <span class="dl-old">₹1,800</span>
+                        <span class="dl-off">25% OFF</span>
+                    </div>
+
+                    <div class="dl-action-btns">
+                        <button class="dl-btn-cart" onclick="addToCart(this)">View Details</button>
+                    </div>
+                </div>
+            </div>
+             <!-- Product 4 -->
+             <div class="dl-card" data-price="550" data-watt="5w" data-type="clip">
+                <div class="dl-card-img">
+                    <img src="assets/img/Flexi-NeckReadingLight.jpg" alt="Lamp">
+                </div>
+                <div class="dl-card-info">
+                    <div class="dl-cat-name">Clip-on</div>
+                    <h3>Flexi-Neck Reading Light</h3>
+                    <div class="dl-rating">★★★★☆ (200)</div>
+
+                    <div class="dl-price-block">
+                        <span class="dl-current">₹550</span>
+                        <span class="dl-old">₹800</span>
+                        <span class="dl-off">15% OFF</span>
+                    </div>
+
+                    <div class="dl-action-btns">
+                        <button class="dl-btn-cart" onclick="addToCart(this)">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <p id="noResultsMsg" style="display:none; width:100%; text-align:center; grid-column: 1/-1; padding: 20px;">
+                No products found with these filters.
+            </p>
+
+        </main>
+    </section>
+  <section class="tp-section">
+  <h2 class="tp-title">Explore our range of Lighting Products</h2>
+
+  <div class="tp-grid">
+    <div class="tp-card">
+      <img src="assets/img/topcorner1.avif" class="tp-corner-img" alt="">
+      <img src="assets/img/PrismSurfaceCOBLEDDownlight.jpg" class="tp-main-img" alt="">
+      <p class="tp-name">Prism Surface COB LED Downlight</p>
+    </div>
+    <div class="tp-card">
+      <img src="assets/img/topcorner2.avif" class="tp-corner-img" alt="">
+      <img src="assets/img/EternalBacklitLEDRecess.jpg" class="tp-main-img" alt="">
+      <p class="tp-name">Eternal Backlit LED Recess</p>
+    </div>
+    <div class="tp-card">
+      <img src="assets/img/topcorner3.png" class="tp-corner-img" alt="">
+      <img src="assets/img/Flexi-NeckReadingLight.jpg" class="tp-main-img" alt="">
+      <p class="tp-name">Flexi LED Spot Light</p>
+    </div>
+    <div class="tp-card">
+      <img src="assets/img/topcorner4.avif" class="tp-corner-img" alt="">
+      <img src="assets/img/LEDMagneliteTrackLight.png" class="tp-main-img" alt="">
+      <p class="tp-name">LED Magnelite Track Light</p>
+    </div>
+    <div class="tp-card">
+      <img src="assets/img/topcorner1.avif" class="tp-corner-img" alt="">
+      <img src="assets/img/PrismSurfaceCOBLEDDownlight.jpg" class="tp-main-img" alt="">
+      <p class="tp-name">Prism Surface COB LED Downlight</p>
+    </div>
+    <div class="tp-card">
+      <img src="assets/img/topcorner2.avif" class="tp-corner-img" alt="">
+      <img src="assets/img/EternalBacklitLEDRecess.jpg" class="tp-main-img" alt="">
+      <p class="tp-name">Eternal Backlit LED Recess</p>
+    </div>
+    <div class="tp-card">
+      <img src="assets/img/topcorner3.png" class="tp-corner-img" alt="">
+      <img src="assets/img/Flexi-NeckReadingLight.jpg" class="tp-main-img" alt="">
+      <p class="tp-name">Flexi LED Spot Light</p>
+    </div>
+    <div class="tp-card">
+      <img src="assets/img/topcorner4.avif" class="tp-corner-img" alt="">
+      <img src="assets/img/LEDMagneliteTrackLight.png" class="tp-main-img" alt="">
+      <p class="tp-name">LED Magnelite Track Light</p>
+    </div>
+  </div> 
+ <button class="tp-btn" onclick="window.location.href='lighting.html'">
+  Explore Lighting Products
+</button>
+</section>
+</div>
+</div>
+<footer class="dl-footer">
+  <div class="dl-footer-container">
+    
+    <div class="dl-footer-top">
+      <!-- About Section -->
+      <div class="dl-footer-about">
+        <div class="logo">
+             <img src="assets/img/dolalogo.png" alt="Dola Light Logo">
+         </div>
+        <p>
+          We offer high-quality, energy-efficient lighting solutions for homes, offices, shops, and industries. 
+          Combining style, durability, and modern design.
+        </p>
+        <div class="dl-social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61581704102972" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/dola.lights/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Informations -->
+      <div class="dl-footer-section">
+        <h3>Informations</h3>
+        <ul>
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Condition</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="dl-footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="product.html">Product</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="dl-footer-section dl-contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+919560348099">+91 9560348099</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@arnavpot.com">info@arnavpot.com</a></p>
+        <p><i class="fa-solid fa-location-dot"></i>
+          <a href="https://goo.gl/maps/YOURLOCATION" target="_blank">
+            C-1277, Sushant Lok-1,<br>
+            Chakarpur (74), Gurgaon -122002
+            Haryana, India
+          </a>
+        </p>
+      </div>
+    </div>
+  <div class="dl-footer-bottom">
+    &copy; 2025 Dolalight.com | All Rights Reserved
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
