@@ -110,6 +110,12 @@ if (slider) {
     });
   });
 
+document.querySelectorAll(".faq-questions").forEach(question => {
+    question.addEventListener("click", () => {
+        const item = question.parentElement;
+        item.classList.toggle("active");
+    });
+});
     /* ================= CARD ANIMATION ================= */
     const animElements = document.querySelectorAll('.anim-up, .anim-fade, .dl-card');
 

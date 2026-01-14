@@ -2317,7 +2317,7 @@ body {
 
     .dl-serv-icon img, 
     .dl-serv-icon i {
-        width: 18px !important; /* Icon thoda chhota */
+        width: 18px !important;
         height: 18px !important;
         font-size: 16px !important;
     }
@@ -2327,22 +2327,20 @@ body {
     }
 
     .dl-serv-text strong {
-        font-size: 7.5px !important; /* Screen ke andar fit hone ke liye font size */
+        font-size: 7.5px !important; 
         display: block;
         line-height: 1;
-        white-space: normal; /* Text ko wrap hone do agar lamba hai */
+        white-space: normal; 
         word-wrap: break-word;
         font-weight: 700;
         color: #000;
     }
 
-    /* Sub-text (Orders above 499) ko hide rakha hai taaki 4 items fit ho sakein */
     .dl-serv-text span {
         display: none !important;
     }
 }
 
-/* Specific fix for iPhone SE and very small phones */
 @media (max-width: 380px) {
     .dl-serv-text strong {
         font-size: 7px !important;
@@ -2352,7 +2350,6 @@ body {
     }
 }
 
-/* PRODUCT GRID */
 .dl-product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2400,7 +2397,7 @@ body {
 
 .dl-card-img {
     width: 100%;
-    padding-top: 75%;
+    height: 200px;
     position: relative;
     overflow: hidden;
 }
@@ -2411,7 +2408,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; 
+    object-fit: cover;
     transition: transform var(--transition-speed);
 }
 
@@ -2504,6 +2501,61 @@ body {
     transform: translateY(-2px);
 }
 
+@media (max-width: 576px) {
+
+    .dl-product-grid {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 16px;
+    }
+
+    .dl-card-img {
+        height: 180px;
+    }
+
+    .dl-card-info {
+        padding: 14px;
+    }
+
+    .dl-card-info h3 {
+        font-size: 1rem;
+    }
+
+    .dl-price-block {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .dl-btn-cart {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+
+    .dl-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 16px;
+        gap: 18px;
+    }
+
+    .dl-card-img {
+        height: 190px;
+    }
+
+    .dl-card-info h3 {
+        font-size: 1.02rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .dl-product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 /*details page*/
 .product-container {
     max-width: 1200px;
@@ -2560,10 +2612,11 @@ body {
 }
 
 .whatsapp-btn {
+    margin-top: 12px;
     background: #25D366;
     color: #fff;
     border: none;
-    padding: 15px 25px;
+    padding: 12px 20px;
     font-size: 18px;
     border-radius: 10px;
     cursor: pointer;
@@ -2573,6 +2626,9 @@ body {
     background: #1ebe5d;
 }
 
+.highlights{
+    margin-top: 12px;
+}
 .highlights ul {
     padding-left: 20px;
 }
@@ -2595,31 +2651,65 @@ table td {
     border-bottom: 1px solid #ddd;
 }
 
-.faq-item {
-    margin-bottom: 15px;
+.faq {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-.faq-question {
-    font-weight: bold;
+.faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.faq-items {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 10px 0;
+}
+
+/* QUESTION */
+.faq-questions {
+    font-size: 1.05rem;
+    font-weight: 600;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
 }
 
-.faq-answer {
-    display: none;
-    margin-top: 8px;
+/* ICON */
+.faq-questions .icon {
+    font-size: 1.4rem;
+    transition: transform 0.3s;
+}
+
+/* ANSWER (hidden by default) */
+.faq-answers {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 0.95rem;
     color: #555;
+    line-height: 1.6;
+    transition: max-height 0.4s ease;
 }
 
-/* Animation */
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s ease;
+/* ACTIVE STATE */
+.faq-items.active .faq-answers {
+    max-height: 200px;
+    padding-bottom: 15px;
 }
 
-.fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
+.faq-items.active .faq-questions .icon {
+    transform: rotate(45deg);
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .faq-questions {
+        font-size: 1rem;
+    }
 }
 
 /* Responsive */
