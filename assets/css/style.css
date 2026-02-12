@@ -1565,17 +1565,16 @@ html, body {
 
 @media (max-width: 576px) {
     .banners {
-        min-height: 480px;
-        padding: 100px 20px;
+        min-height: 520px;
+        padding: 90px 20px 60px;
 
         justify-content: center;
         text-align: center;
 
-        background-position: 80% center;
-        background-size: cover;
+        background-size: 140%;
+        background-position: center center;
     }
 }
-
 
 .container {
     max-width: 1200px;
