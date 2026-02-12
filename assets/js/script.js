@@ -71,14 +71,27 @@ if (slider) {
     }
 
     /* ================= MOBILE MENU ================= */
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+const toggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links li a'); 
 
-    if (toggle && navLinks) {
-        toggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+if (toggle && navLinks) {
+    toggle.addEventListener('click', (e) => {
+        navLinks.classList.toggle('active');
+        e.stopPropagation();
+    });
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
         });
-    }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
+            navLinks.classList.remove('active');
+        }
+    });
+}
 
     /* ================= CARD AUTO SCROLL ================= */
     const grid = document.querySelector('.tp-grid');

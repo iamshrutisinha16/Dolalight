@@ -14,31 +14,37 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+/* Fix for Side Space */
+html, body {
     background-color: var(--white);
     color: var(--text-color);
-    overflow-x: hidden;
+    overflow-x: hidden; /* Bahar nikalne wala space khatam */
+    width: 100%;
+    position: relative;
 }
 
 .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 .section { padding: 80px 0; }
 .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: var(--dark-blue); font-weight: 700; }
 
+/* Top Bar */
 .top-bar {
-    background: linear-gradient(135deg, #3465C2 0%, #2F5BB0 50%, #294F9A 100%);
+    background: var(--gradient);
     color: white;
     text-align: center;
-    padding: 8px;
+    padding: 8px 10px;
     font-size: 13px;
     font-weight: 500;
 }
 
+/* Navbar */
 .navbar {
     background: white;
-    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 .nav-container {
@@ -52,11 +58,10 @@ body {
 }
 
 .logo img {
-    height: 100px;        
+    height: 80px; /* Thoda optimize kiya mobile ke liye */
     width: auto;
     display: block;
 }
-
 
 .nav-links {
     display: flex;
@@ -66,8 +71,8 @@ body {
 .nav-links li a {
     text-decoration: none;
     color: #444;
-    font-weight: 350;
-    padding: 8px 10px;
+    font-weight: 400;
+    padding: 8px 15px;
     transition: 0.3s;
 }
 
@@ -76,9 +81,10 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
+/* Search Box */
 .search-box {
     display: flex;
     align-items: center;
@@ -98,34 +104,31 @@ body {
 }
 .search-box i { color: var(--skyblue); }
 
+/* Buttons */
 .account-btn {
     display: flex;
     align-items: center;
     gap: 8px;
     background: var(--gradient);
-    color: white;
+    color: white !important;
     padding: 8px 18px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 500;
+    font-size: 14px;
     transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
-.nav-right button{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--gradient);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
+.account-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 68, 255, 0.2); }
+
+.menu-toggle { 
+    display: none; 
+    font-size: 26px; 
+    color: var(--dark-blue); 
+    cursor: pointer;
 }
-.nav-right button:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0, 68, 255, 0.3); }
-.account-btn:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0, 68, 255, 0.3); }
-.menu-toggle { display: none; font-size: 24px; color: var(--dark-blue); }
 
 /* ================= LOGIN POPUP ================= */
 .login-overlay {
@@ -136,187 +139,132 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  padding: 20px;
 }
 
 .login-box {
   position: relative;
-  width: 90%;
-  max-width: 900px;
+  width: 100%;
+  max-width: 850px;
   background: #fff;
   border-radius: 18px;
   display: flex;
   overflow: hidden;
+  animation: popupScale 0.3s ease-out;
+}
+
+@keyframes popupScale {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .login-close {
   position: absolute;
-  top: 18px;
-  right: 22px;
-  background: none;
+  top: 15px;
+  right: 15px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   border: none;
-  font-size: 26px;
+  font-size: 20px;
   cursor: pointer;
-  color: #333;
   z-index: 10;
-}
-
-.login-close:hover {
-  color: #ff3b3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .login-left {
-  width: 50%;
-  background: linear-gradient(90deg, #3465C2, #2F5BB0, #294F9A);
+  width: 45%;
+  background: var(--gradient);
   color: #fff;
   padding: 40px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  gap: 6px;  
+  gap: 15px;
 }
 
-.login-left h2 {
-  font-size: 30px;
-  margin: 0;
-  line-height: 1.15;
-}
-
-.login-left p {
-  font-size: 15px;
-  margin: 0;
-  opacity: 0.9;
-  line-height: 1.2;
-}
-
-.login-left img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-top: 12px;
-}
+.login-left h2 { font-size: 28px; line-height: 1.2; }
+.login-left p { font-size: 14px; opacity: 0.9; }
+.login-left img { width: 100%; border-radius: 10px; margin-top: 10px; }
 
 .login-right {
-  width: 50%;
+  width: 55%;
   padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.login-right h2 {
-  color: #0d8bff;
-  margin-bottom: 6px;
-}
-
-.login-right p {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #666;
 }
 
 .login-right input {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 16px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline-color: var(--skyblue);
 }
 
 .login-right button {
-  margin-top: 10px;
-  padding: 14px;
+  width: 100%;
+  padding: 12px;
   border-radius: 30px;
   border: none;
-  background: linear-gradient(90deg, #3465C2, #2F5BB0, #294F9A);
+  background: var(--gradient);
   color: #fff;
-  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
 }
 
-.login-right button:hover {
-  opacity: 0.9;
-}
-
-.small-text {
-  margin-top: 16px;
-  font-size: 14px;
-  color: #666;
-}
-
-.small-text a {
-  color: #0d8bff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .login-box {
-    flex-direction: column;
-  }
-
-  .login-left {
-    display: none;
-  }
-
-  .login-right {
-    width: 100%;
-  }
-}
-
-/* POPUP ANIMATION */
-@keyframes popupScale{
-  from{
-    transform: scale(0.85);
-    opacity: 0;
-  }
-  to{
-    transform: scale(1);
-    opacity: 1;
-  }
+/* ================= RESPONSIVE (THE FIX) ================= */
+@media (max-width: 992px) {
+    .nav-links li a { padding: 8px 10px; font-size: 14px; }
+    .search-box input { width: 100px; }
 }
 
 @media (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-    }
+    .menu-toggle { display: block; }
 
     .nav-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Default hidden */
+        width: 280px;
+        height: 100vh;
         background: #fff;
         flex-direction: column;
-        align-items: center;
-        display: none;
-        padding: 20px 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 80px 25px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
     }
 
-    .nav-links.active {
-        display: flex;
-    }
+    .nav-links.active { right: 0; }
 
-    .search-box {
-        display: none;
-    }
+    .nav-links li { margin-bottom: 15px; width: 100%; }
+    .nav-links li a { font-size: 18px; display: block; width: 100%; }
 
-    .login-box {
-        flex-direction: column;
-    }
+    .search-box { display: none; } /* Mobile par search hide */
+    
+    .logo img { height: 60px; } /* Mobile logo size */
 
-    .login-left {
-        display: none;
+    .account-btn {
+        padding: 7px 14px;
+        font-size: 12px;
     }
+    .account-btn span { display: none; } /* Sirf icon dikhega agar bahut choti screen ho */
 
-    .login-right {
-        width: 100%;
-    }
+    /* Login Popup Mobile Fix */
+    .login-box { flex-direction: column; max-width: 400px; }
+    .login-left { width: 100%; padding: 30px; text-align: center; align-items: center; }
+    .login-left img { display: none; } /* Mobile par image hide */
+    .login-right { width: 100%; padding: 30px; }
+}
+
+@media (max-width: 400px) {
+    .nav-container { padding: 0 10px; }
+    .logo img { height: 50px; }
+    .account-btn { padding: 6px 10px; }
 }
     
 /* ================= HERO BASE ================= */
